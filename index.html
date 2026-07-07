@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Escolar Robótica Ciclo 2026-2027 - Colegio Latino</title>
+    <style>
+        :root {
+            --primary: #00838f;
+            --primary-light: #00b4d8;
+            --accent: #e65100;
+            --accent-light: #ffb74d;
+            --bg-main: #f4f7f6;
+            --bg-card: #ffffff;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --border-color: #d1d5db;
+            --weekend-bg: #eceff1;
+            --tri1-color: #0288d1;
+            
+            /* Código de colores para los 6 grados */
+            --grade-1: #e91e63;
+            --grade-2: #3f51b5;
+            --grade-3: #009688;
+            --grade-4: #ff9800;
+            --grade-5: #795548;
+            --grade-6: #673ab7;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-main); color: var(--text-main); display: flex; min-height: 100vh; }
+
+        .sidebar { width: 260px; background-color: #1a252f; color: #ecf0f1; padding: 20px 0; display: flex; flex-direction: column; position: fixed; height: 100vh; z-index: 100; }
+        .sidebar-brand { padding: 10px 25px; font-size: 18px; font-weight: bold; color: var(--primary-light); border-bottom: 1px solid #34495e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .sidebar-menu { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+        .sidebar-item { padding: 12px 25px; cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.3s; font-size: 14px; }
+        .sidebar-item.active { background-color: var(--primary); color: #ffffff; border-left: 5px solid var(--accent); }
+
+        .main-content { margin-left: 260px; flex-grow: 1; padding: 30px; background-color: var(--bg-main); }
+        .header-app { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; background: var(--bg-card); padding: 20px 25px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 6px solid var(--primary); }
+        .identity-container { display: flex; align-items: center; gap: 20px; }
+        .logo-placeholder { width: 70px; height: 70px; border: 2px dashed var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--text-muted); text-align: center; background: #fafafa; }
+        .header-title h1 { font-size: 22px; color: var(--primary); font-weight: 800; }
+        .header-title h2 { font-size: 14px; color: var(--text-main); margin: 2px 0; }
+
+        .sync-banner { background-color: #e0f2f1; color: #004d40; padding: 8px 15px; border-radius: 6px; font-size: 13px; font-weight: bold; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #b2dfdb; }
+        .sync-banner.sync-error { background-color: #ffebee; color: #c62828; border-color: #ffcdd2; }
+        .sync-banner.syncing { background-color: #fff3e0; color: #e65100; border-color: #ffe0b2; }
+
+        .card { background: var(--bg-card); border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .app-section { display: none; }
+        .app-section.active { display: block; }
+        h2 { font-size: 18px; margin-bottom: 20px; color: var(--primary); border-bottom: 2px solid var(--primary-light); padding-bottom: 8px; }
+
+        .trimestre-container { margin-bottom: 25px; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .trimestre-header { color: white; padding: 12px 20px; font-size: 16px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .parcial-block { padding: 15px; border-bottom: 1px solid #edf2f7; background: #f7fafc; }
+        .parcial-title { font-size: 14px; font-weight: 700; color: #4a5568; margin-bottom: 10px; display: inline-block; background: #e2e8f0; padding: 3px 10px; border-radius: 4px; }
+
+        .form-row { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
+        .form-group { flex: 1; min-width: 180px; display: flex; flex-direction: column; gap: 5px; }
+        label { font-size: 13px; font-weight: 600; color: var(--text-main); }
+        select { padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; background-color: white; }
+
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .data-table th, .data-table td { border: 1px solid var(--border-color); padding: 12px 10px; text-align: left; font-size: 13px; }
+        .data-table th { background-color: #f1f5f9; color: var(--text-main); font-weight: 700; }
+        .data-table tr:nth-child(even) { background-color: #f8fafc; }
+        .badge { display: inline-block; padding: 4px 7px; border-radius: 4px; font-size: 11px; font-weight: bold; color: white; text-align: center; }
+        
+        .resource-link { display: inline-flex; align-items: center; gap: 4px; background: #e0f7fa; color: #006064; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; text-decoration: none; }
+
+        /* Estilos de Calendario Mensual Tipo Agenda */
+        .calendar-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; gap: 15px; flex-wrap: wrap; }
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 14.285%); border: 1px solid var(--border-color); background: #fff; border-radius: 8px; overflow: hidden; }
+        .calendar-day-header { background-color: var(--primary); color: white; padding: 10px 5px; text-align: center; font-weight: bold; font-size: 13px; }
+        .calendar-cell { min-height: 130px; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 6px; display: flex; flex-direction: column; }
+        .calendar-cell.weekend { background-color: var(--weekend-bg); }
+        .calendar-day-num { font-weight: bold; font-size: 12px; color: var(--text-main); margin-bottom: 4px; }
+        .agenda-item-wrapper { display: flex; flex-direction: column; gap: 4px; overflow-y: auto; flex-grow: 1; }
+        
+        .agenda-block { color: white; padding: 4px 6px; border-radius: 4px; font-size: 10px; line-height: 1.2; font-weight: 500; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .agenda-block strong { display: block; margin-bottom: 1px; font-size: 10.5px; background: rgba(0,0,0,0.15); padding: 1px 3px; border-radius: 2px; }
+
+        /* Vista Semanal */
+        .weekly-container { display: flex; flex-direction: column; gap: 15px; }
+        .weekly-day-card { background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .weekly-day-header { background: #e2e8f0; padding: 10px 15px; font-weight: bold; font-size: 14px; color: #334155; display: flex; justify-content: space-between; }
+        .weekly-day-body { padding: 10px 15px; display: flex; flex-direction: column; gap: 8px; }
+        .weekly-item { display: flex; justify-content: space-between; align-items: center; padding: 8px; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--primary); }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-brand"><span>📅 Latino Robótica</span></div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item active" onclick="switchTab('syllabus-sec')">📚 Programa Anual</li>
+            <li class="sidebar-item" onclick="switchTab('agenda-mensual-sec')">🗓️ Vista Mensual</li>
+            <li class="sidebar-item" onclick="switchTab('agenda-semanal-sec')">📆 Vista Semanal</li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div id="sync-status-banner" class="sync-banner syncing">
+            <span id="sync-status-text">🔄 Inicializando conexión remota...</span>
+            <small id="sync-status-time"></small>
+        </div>
+
+        <div class="header-app">
+            <div class="identity-container">
+                <div class="logo-placeholder">[ LOGO ]</div>
+                <div class="header-title">
+                    <h1>Agenda Escolar Robótica Ciclo 2026-2027</h1>
+                    <h2>Colegio Latino</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 1: PROGRAMA ANUAL REAGRUPADO POR TRIMESTRE Y PARCIAL -->
+        <div id="syllabus-sec" class="app-section active">
+            <div class="card">
+                <h2>📚 Dosificación y Programa Anual Sincronizado</h2>
+                
+                <div class="form-row" style="margin-bottom: 20px; background:#b8dbfd; padding:15px; border-radius:8px;">
+                    <div class="form-group">
+                        <label>Filtrar por Grado:</label>
+                        <select id="syllabus-grade-filter" onchange="renderAllViews()">
+                            <option value="todos">Todos los Grados</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Filtrar por Trimestre:</label>
+                        <select id="syllabus-trimestre-filter" onchange="renderAllViews()">
+                            <option value="todos">Todos los Trimestres</option>
+                            <option value="1">Trimestre 1</option>
+                            <option value="2">Trimestre 2</option>
+                            <option value="3">Trimestre 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Filtrar por Parcial:</label>
+                        <select id="syllabus-parcial-filter" onchange="renderAllViews()">
+                            <option value="todos">Todos los Parciales</option>
+                            <option value="1">Parcial 1</option>
+                            <option value="2">Parcial 2</option>
+                            <option value="3">Parcial 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Temporalidad de Clases:</label>
+                        <select id="syllabus-time-filter" onchange="renderAllViews()">
+                            <option value="futuros">🔮 Clases Futuras / Próximas</option>
+                            <option value="pasados">⏳ Clases Pasadas</option>
+                            <option value="todos">👁️ Ver Todo el Programa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="syllabus-accordion-wrapper"></div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 2: VISTA MENSUAL TIPO AGENDA CON FILTRADO DE GRADO Y COLORES -->
+        <div id="agenda-mensual-sec" class="app-section">
+            <div class="card">
+                <div class="calendar-controls">
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <button class="btn-print" style="background:var(--primary); padding: 8px 15px;" onclick="changeMonth(-1)">◀</button>
+                        <h3 id="calendar-month-year" style="color:var(--primary); font-weight:800; min-width: 150px; text-align: center;"></h3>
+                        <button class="btn-print" style="background:var(--primary); padding: 8px 15px;" onclick="changeMonth(1)">▶</button>
+                    </div>
+                    
+                    <div class="form-group" style="max-width: 250px; min-width: 200px; flex: none;">
+                        <select id="monthly-grade-filter" onchange="renderAgendaMensual()" style="border: 2px solid var(--primary); font-weight: bold;">
+                            <option value="todos">👁️ Ver Todos los Grados</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="calendar-wrapper" class="calendar-grid"></div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 3: VISTA SEMANAL TIPO AGENDA -->
+        <div id="agenda-semanal-sec" class="app-section">
+            <div class="card">
+                <div class="calendar-controls">
+                    <button class="btn-print" style="background:var(--primary);" onclick="changeWeek(-1)">◀ Semana Anterior</button>
+                    <h3 id="weekly-range-label" style="color:var(--primary); font-weight:800;"></h3>
+                    <button class="btn-print" style="background:var(--primary);" onclick="changeWeek(1)">Semana Siguiente ▶</button>
+                </div>
+                <div id="weekly-wrapper" class="weekly-container"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const API_URL = "https://script.google.com/macros/s/AKfycbxGCsENRc619X26S4ApAfhljL8b9Wh43dQL0AJY5pja3JEe34IPc7gQC2JjSgLEfxWQ/exec";
+
+        let state = { syllabus: [] };
+
+        // Control del tiempo del sistema
+        let CURRENT_DATE = new Date();
+        let activeMonth = CURRENT_DATE.getMonth(); 
+        let activeYear = CURRENT_DATE.getFullYear();
+        let activeWeekDate = new Date();
+
+        const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+        // Limpieza absoluta de fechas falsas de tipo ISO o números crudos que entrega Google Sheets[cite: 2]
+        function cleanHoraSheets(rawTime) {
+            if (rawTime === null || rawTime === undefined || rawTime === "") return "No asig.";
+            
+            // Si viene como una instancia de Date de JS
+            if (rawTime instanceof Date) {
+                let hrs = rawTime.getHours().toString().padStart(2, '0');
+                let mins = rawTime.getMinutes().toString().padStart(2, '0');
+                return `${hrs}:${mins}`;
+            }
+
+            // Si viene como un número decimal crudo de Sheets (ej: 0.33333 que equivale a las 08:00 AM)
+            if (typeof rawTime === "number" || (!isNaN(rawTime) && !isNaN(parseFloat(rawTime)))) {
+                let num = parseFloat(rawTime);
+                if (num >= 0 && num < 1) {
+                    let totalMinutes = Math.round(num * 24 * 60);
+                    let hrs = Math.floor(totalMinutes / 60).toString().padStart(2, '0');
+                    let mins = (totalMinutes % 60).toString().padStart(2, '0');
+                    return `${hrs}:${mins}`;
+                }
+            }
+
+            let valStr = rawTime.toString().trim();
+            
+            // Si contiene espacio o 'T' seguido de dos puntos, extrae la hora de la cadena ISO (ej. 1899-12-30T08:00:00)[cite: 2]
+            let match = valStr.match(/(?:T|\s)(\d{2}:\d{2})/);
+            if (match) return match[1];
+            
+            // Si viene la hora limpia en formato corto (ej. 08:00)[cite: 2]
+            if (/^\d{2}:\d{2}/.test(valStr)) {
+                return valStr.substring(0, 5);
+            }
+
+            // Expresión regular de respaldo para capturar patrones de hora (ej: de celdas con formatos mixtos)[cite: 2]
+            let fallbackMatch = valStr.match(/(\d{1,2}):(\d{2})/);
+            if (fallbackMatch) {
+                let horas = fallbackMatch[1].padStart(2, '0');
+                let minutos = fallbackMatch[2];
+                return `${horas}:${minutos}`;
+            }
+
+            // Si viene una fecha corta (ej. 1899-12-30) sin hora explícita[cite: 2]
+            if (valStr.includes("1899-12-30") || valStr.includes("1900-01-01")) {
+                return "No asig.";
+            }
+
+            return valStr;
+        }
+
+        function formatRecursoHTML(recursoText) {
+            if (!recursoText) return "Sin recurso";
+            const trimmed = recursoText.trim();
+            if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+                return `<a href="${trimmed}" target="_blank" class="resource-link">🔗 Ver Recurso</a>`;
+            }
+            return recursoText;
+        }
+
+        function getGradeColor(grado) {
+            const g = grado ? grado.toString().trim() : "";
+            if (g.includes("1")) return "var(--grade-1)";
+            if (g.includes("2")) return "var(--grade-2)";
+            if (g.includes("3")) return "var(--grade-3)";
+            if (g.includes("4")) return "var(--grade-4)";
+            if (g.includes("5")) return "var(--grade-5)";
+            if (g.includes("6")) return "var(--grade-6)";
+            return "var(--primary)";
+        }
+
+        function normalizeKey(k) {
+            return k ? k.toString().trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "") : "";
+        }
+
+        function switchTab(id) {
+            document.querySelectorAll('.app-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        async function cargarDatosDesdeSheets() {
+            try {
+                updateSyncStatus("syncing", "🔄 Sincronizando agenda en tiempo real...");
+                const response = await fetch(API_URL);
+                const remoteState = await response.json();
+                
+                if (remoteState) {
+                    let rawPlan = remoteState.PlanAnual || remoteState.plananual || [];
+                    if(rawPlan.length > 0) {
+                        state.syllabus = rawPlan.map(s => {
+                            let cleanRow = {};
+                            for (let k in s) { cleanRow[normalizeKey(k)] = s[k]; }
+                            return {
+                                semana: cleanRow["semana"] || "s/n",
+                                trimestre: cleanRow["trimestre"] ? cleanRow["trimestre"].toString() : "",
+                                parcial: cleanRow["parcial"] ? cleanRow["parcial"].toString() : "",
+                                modulo: cleanRow["modulo"] || "Módulo General",
+                                desc: cleanRow["desc"] || cleanRow["descripcion"] || "",
+                                detallado1: cleanRow["detallado1"] || "-",
+                                grado: cleanRow["grado"] ? cleanRow["grado"].toString().trim() : "",
+                                recursos: cleanRow["recursos"] || cleanRow["recurso"] || "",
+                                hora: cleanHoraSheets(cleanRow["hora"]), // Limpieza inmediata desde la recepción del JSON[cite: 2]
+                                dia: cleanRow["dia"] || "",
+                                fechaClase: cleanRow["fechaclase"] ? cleanRow["fechaclase"].toString().split("T")[0] : ""
+                            };
+                        });
+                        updateFilterOptions();
+                    }
+                    renderAllViews();
+                    updateSyncStatus("sync-success", "✅ Sincronización exitosa.");
+                }
+            } catch (error) {
+                console.error(error);
+                updateSyncStatus("sync-error", "⚠️ Falló la sincronización. Reintentando...");
+            }
+        }
+
+        function updateFilterOptions() {
+            const fSyllabus = document.getElementById('syllabus-grade-filter');
+            const fMonthly = document.getElementById('monthly-grade-filter');
+            const currentSyllabusVal = fSyllabus.value;
+            const currentMonthlyVal = fMonthly.value;
+            
+            const uniqueGrades = [...new Set(state.syllabus.map(i => i.grado))].filter(g => g).sort();
+            
+            fSyllabus.innerHTML = '<option value="todos">Todos los Grados</option>';
+            fMonthly.innerHTML = '<option value="todos">👁️ Ver Todos los Grados</option>';
+            
+            uniqueGrades.forEach(g => {
+                let opt = `<option value="${g}">${g}</option>`;
+                fSyllabus.innerHTML += opt;
+                fMonthly.innerHTML += opt;
+            });
+            
+            if(uniqueGrades.includes(currentSyllabusVal)) fSyllabus.value = currentSyllabusVal;
+            if(uniqueGrades.includes(currentMonthlyVal)) fMonthly.value = currentMonthlyVal;
+        }
+
+        function getProcessedSyllabus() {
+            let list = [...state.syllabus];
+
+            // Ordenamiento por fecha de clase y hora secundaria
+            list.sort((a,b) => {
+                let dateA = new Date(a.fechaClase + 'T00:00:00');
+                let dateB = new Date(b.fechaClase + 'T00:00:00');
+                if (dateA - dateB !== 0) return dateA - dateB;
+                return a.hora.localeCompare(b.hora);
+            });
+
+            const selGrade = document.getElementById('syllabus-grade-filter').value;
+            const selTri = document.getElementById('syllabus-trimestre-filter').value;
+            const selPar = document.getElementById('syllabus-parcial-filter').value;
+            const selTime = document.getElementById('syllabus-time-filter').value;
+            const hoyLocal = new Date(CURRENT_DATE.getFullYear(), CURRENT_DATE.getMonth(), CURRENT_DATE.getDate(), 0, 0, 0);
+
+            return list.filter(row => {
+                const matchGrade = (selGrade === "todos" || row.grado === selGrade);
+                const matchTri = (selTri === "todos" || row.trimestre === selTri);
+                const matchPar = (selPar === "todos" || row.parcial === selPar);
+                
+                let isFuturo = true;
+                if (row.fechaClase) {
+                    const p = row.fechaClase.split("-");
+                    if (p.length === 3) {
+                        const dateClase = new Date(parseInt(p[0]), parseInt(p[1]) - 1, parseInt(p[2]), 0, 0, 0);
+                        isFuturo = dateClase >= hoyLocal;
+                    }
+                }
+
+                let matchTime = true;
+                if (selTime === "futuros") matchTime = isFuturo;
+                if (selTime === "pasados") matchTime = !isFuturo;
+
+                return matchGrade && matchTri && matchPar && matchTime;
+            });
+        }
+
+        // RENDER 1: TABLA GENERAL AGRUPADA EXCLUSIVAMENTE POR TRIMESTRE Y PARCIAL
+        function renderSyllabusAccordion() {
+            const wrapper = document.getElementById('syllabus-accordion-wrapper');
+            if(!wrapper) return;
+            wrapper.innerHTML = '';
+
+            const filteredData = getProcessedSyllabus();
+
+            if (filteredData.length === 0) {
+                wrapper.innerHTML = '<p style="color:var(--text-muted); text-align:center; padding:20px;">No se encontraron clases o planeaciones que coincidan con estos filtros.</p>';
+                return;
+            }
+
+            // Agrupación matricial original por Trimestre y Parcial[cite: 2]
+            const tree = {};
+            filteredData.forEach(row => {
+                const triLabel = row.trimestre ? "Trimestre " + row.trimestre : "Sin Trimestre";
+                const parLabel = row.parcial ? "Parcial " + row.parcial : "Sin Parcial";
+                if (!tree[triLabel]) tree[triLabel] = {};
+                if (!tree[triLabel][parLabel]) tree[triLabel][parLabel] = [];
+                tree[triLabel][parLabel].push(row);
+            });
+
+            for (const triKey in tree) {
+                let html = `<div class="trimestre-container"><div class="trimestre-header" style="background:var(--tri1-color);"><span>📘 ${triKey.toUpperCase()}</span></div>`;
+                for (const parKey in tree[triKey]) {
+                    html += `
+                    <div class="parcial-block">
+                        <span class="parcial-title">${parKey}</span>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 80px;">Grado</th>
+                                    <th style="width: 60px; text-align:center;">Semana</th>
+                                    <th style="width: 120px;">Día / Hora</th>
+                                    <th style="width: 110px;">Fecha Clase</th>
+                                    <th>Módulo / Lección</th>
+                                    <th>Descripción Corta</th>
+                                    <th>Detallado 1</th>
+                                    <th>Recursos</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+                    
+                    tree[triKey][parKey].forEach(r => {
+                        let horaLimpia = cleanHoraSheets(r.hora);
+                        html += `
+                            <tr>
+                                <td><span class="badge" style="background:${getGradeColor(r.grado)}">${r.grado || ''}</span></td>
+                                <td style="text-align: center;"><strong>${r.semana || ''}</strong></td>
+                                <td><strong>${r.dia || '-'}</strong><br><span style="color:var(--accent); font-weight:700;">⏰ ${horaLimpia}</span></td>
+                                <td><code>${r.fechaClase || '-'}</code></td>
+                                <td><strong style="color:var(--primary); font-size:14px;">${r.modulo || ''}</strong></td>
+                                <td><small>${r.desc || ''}</small></td>
+                                <td><span style="color:#475569; font-size:12px;">${r.detallado1}</span></td>
+                                <td>${formatRecursoHTML(r.recursos)}</td>
+                            </tr>`;
+                    });
+                    html += '</tbody></table></div>';
+                }
+                wrapper.innerHTML += html + '</div>';
+            }
+        }
+
+        // RENDER 2: VISTA AGENDA MENSUAL TIPO CALENDARIO CON GRADOS ESPECÍFICOS Y COLORES
+        function renderAgendaMensual() {
+            const wrapper = document.getElementById('calendar-wrapper');
+            const label = document.getElementById('calendar-month-year');
+            const monthlyGradeFilter = document.getElementById('monthly-grade-filter').value;
+            if(!wrapper || !label) return;
+
+            label.innerText = `${monthNames[activeMonth]} ${activeYear}`;
+            wrapper.innerHTML = '';
+
+            ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"].forEach(d => wrapper.innerHTML += `<div class="calendar-day-header">${d}</div>`);
+
+            const firstIdx = new Date(activeYear, activeMonth, 1).getDay();
+            const totalDays = new Date(activeYear, activeMonth + 1, 0).getDate();
+
+            for(let i=0; i<firstIdx; i++) wrapper.innerHTML += `<div class="calendar-cell weekend"></div>`;
+
+            for(let d=1; d<=totalDays; d++) {
+                let targetDateStr = `${activeYear}-${String(activeMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+                
+                // Filtrar clases de este día y grado seleccionado
+                let matches = state.syllabus.filter(r => {
+                    const matchDate = r.fechaClase === targetDateStr;
+                    const matchGrade = (monthlyGradeFilter === "todos" || r.grado === monthlyGradeFilter);
+                    return matchDate && matchGrade;
+                });
+
+                let blocksHTML = '';
+                matches.forEach(m => {
+                    let horaLimpia = cleanHoraSheets(m.hora);
+                    blocksHTML += `
+                        <div class="agenda-block" style="background:${getGradeColor(m.grado)}">
+                            <strong>${m.grado} - ⏰ ${horaLimpia}</strong>
+                            <span>Lección ${m.semana}: ${m.modulo}</span>
+                        </div>`;
+                });
+
+                let dayOfWeek = new Date(activeYear, activeMonth, d).getDay();
+                let isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+
+                wrapper.innerHTML += `
+                    <div class="calendar-cell ${isWeekend ? 'weekend' : ''}">
+                        <span class="calendar-day-num">${d}</span>
+                        <div class="agenda-item-wrapper">${blocksHTML}</div>
+                    </div>`;
+            }
+        }
+
+        // RENDER 3: VISTA AGENDA SEMANAL TIPO AGENDA
+        function renderAgendaSemanal() {
+            const wrapper = document.getElementById('weekly-wrapper');
+            const label = document.getElementById('weekly-range-label');
+            if(!wrapper || !label) return;
+
+            wrapper.innerHTML = '';
+            
+            let currentDay = activeWeekDate.getDay();
+            let distanceToMonday = currentDay === 0 ? -6 : 1 - currentDay; 
+            let monday = new Date(activeWeekDate);
+            monday.setDate(activeWeekDate.getDate() + distanceToMonday);
+
+            let sunday = new Date(monday);
+            sunday.setDate(monday.getDate() + 6);
+
+            label.innerText = `Semana: del ${monday.getDate()} de ${monthNames[monday.getMonth()]} al ${sunday.getDate()} de ${monthNames[sunday.getMonth()]} del ${sunday.getFullYear()}`;
+
+            for(let i=0; i<7; i++) {
+                let thisDay = new Date(monday);
+                thisDay.setDate(monday.getDate() + i);
+                let dayStr = `${thisDay.getFullYear()}-${String(thisDay.getMonth()+1).padStart(2,'0')}-${String(thisDay.getDate()).padStart(2,'0')}`;
+
+                let dayMatches = state.syllabus.filter(r => r.fechaClase === dayStr).sort((a,b)=>a.hora.localeCompare(b.hora));
+
+                let dayHTML = '';
+                if(dayMatches.length === 0) {
+                    dayHTML = '<p style="color:var(--text-muted); font-size:12px; font-style:italic; padding:5px 0;">Sin lecciones asignadas para este día.</p>';
+                } else {
+                    dayMatches.forEach(m => {
+                        let horaLimpia = cleanHoraSheets(m.hora);
+                        dayHTML += `
+                            <div class="weekly-item" style="border-left-color:${getGradeColor(m.grado)}">
+                                <div>
+                                    <span class="badge" style="background:${getGradeColor(m.grado)}; margin-right:8px;">${m.grado}</span>
+                                    <strong>Lección: ${m.modulo}</strong>
+                                </div>
+                                <div style="font-weight:bold; color:var(--accent);">⏰ Hora clase: ${horaLimpia}</div>
+                            </div>`;
+                    });
+                }
+
+                wrapper.innerHTML += `
+                    <div class="weekly-day-card">
+                        <div class="weekly-day-header">
+                            <span>📅 ${diasSemana[thisDay.getDay()]} ${thisDay.getDate()} de ${monthNames[thisDay.getMonth()]}</span>
+                        </div>
+                        <div class="weekly-day-body">${dayHTML}</div>
+                    </div>`;
+            }
+        }
+
+        function changeMonth(dir) {
+            activeMonth += dir;
+            if(activeMonth > 11) { activeMonth = 0; activeYear++; }
+            if(activeMonth < 0) { activeMonth = 11; activeYear--; }
+            renderAgendaMensual();
+        }
+
+        function changeWeek(dir) {
+            activeWeekDate.setDate(activeWeekDate.getDate() + (dir * 7));
+            renderAgendaSemanal();
+        }
+
+        function renderAllViews() {
+            renderSyllabusAccordion();
+            renderAgendaMensual();
+            renderAgendaSemanal();
+        }
+
+        function updateSyncStatus(s, t) {
+            const bannerElement = document.getElementById("sync-status-banner");
+            const bannerText = document.getElementById("sync-status-text");
+            const bannerTime = document.getElementById("sync-status-time");
+            if(bannerElement && bannerText && bannerTime) {
+                bannerElement.className = "sync-banner " + s;
+                bannerText.innerText = t;
+                bannerTime.innerText = new Date().toLocaleTimeString();
+            }
+        }
+
+        window.onload = function() {
+            cargarDatosDesdeSheets();
+            setInterval(cargarDatosDesdeSheets, 30000);
+        };
+    </script>
+</body>
+</html>
