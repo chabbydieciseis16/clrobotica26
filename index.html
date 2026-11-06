@@ -20,68 +20,19 @@ body { background-color: var(--bg-main); color: var(--text-main); display: flex;
 .sidebar-item { padding: 10px 20px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.3s; font-size: 13px; }
 .sidebar-item:hover { background-color: #2c3e50; }
 .sidebar-item.active { background-color: var(--primary); color: #ffffff; border-left: 5px solid var(--accent); }
-
-/* ============================================================
-   BARRA DERECHA MÁS GRANDE Y CON COLORES VIVOS
-   ============================================================ */
-.sidebar-right { 
-    width: 340px; 
-    background: linear-gradient(180deg, #1a252f 0%, #2c3e50 100%);
-    color: #ecf0f1; 
-    padding: 16px 0; 
-    display: flex; 
-    flex-direction: column; 
-    position: fixed; 
-    right:0; 
-    top:0; 
-    height: 100vh; 
-    z-index: 100; 
-    overflow-y: auto; 
-    border-left: 3px solid var(--primary-light);
-    box-shadow: -4px 0 15px rgba(0,0,0,0.15);
-}
-.sidebar-panel-box { 
-    padding: 16px 14px; 
-    margin: 8px 12px; 
-    background: rgba(255,255,255,0.06); 
-    border-radius: 12px; 
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.sidebar-panel-box h4 { 
-    font-size: 13px; 
-    color: #ffb74d; 
-    margin-bottom: 12px; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid rgba(255,183,77,0.3);
-}
+.sidebar-right { width: 340px; background: linear-gradient(180deg, #1a252f 0%, #2c3e50 100%); color: #ecf0f1; padding: 16px 0; display: flex; flex-direction: column; position: fixed; right:0; top:0; height: 100vh; z-index: 100; overflow-y: auto; border-left: 3px solid var(--primary-light); box-shadow: -4px 0 15px rgba(0,0,0,0.15); }
+.sidebar-panel-box { padding: 16px 14px; margin: 8px 12px; background: rgba(255,255,255,0.06); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.sidebar-panel-box h4 { font-size: 13px; color: #ffb74d; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; display: flex; align-items: center; gap: 6px; padding-bottom: 8px; border-bottom: 2px solid rgba(255,183,77,0.3); }
 .panel-list-wrapper { display: flex; flex-direction: column; gap: 10px; overflow: hidden; max-height: 400px; overflow-y: auto; }
 .panel-list-wrapper::-webkit-scrollbar { width: 6px; }
 .panel-list-wrapper::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
 .panel-list-wrapper::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 3px; }
-.panel-item-mini { 
-    background: rgba(255,255,255,0.08); 
-    padding: 12px 14px; 
-    border-radius: 10px; 
-    font-size: 13px; 
-    border-left: 5px solid var(--primary-light);
-    transition: transform 0.2s, background 0.2s;
-}
+.panel-item-mini { background: rgba(255,255,255,0.08); padding: 12px 14px; border-radius: 10px; font-size: 13px; border-left: 5px solid var(--primary-light); transition: transform 0.2s, background 0.2s; }
 .panel-item-mini:hover { transform: translateX(4px); background: rgba(255,255,255,0.14); }
 .panel-item-mini.active-today { border-left-color: #e91e63; background: rgba(233,30,99,0.2); }
 .panel-item-mini.pasado { opacity: 0.45; filter: grayscale(80%); border-left-color: #64748b !important; }
 .panel-item-countdown { font-size: 12px; color: #a5f3fc; font-weight: 800; display: block; margin-top: 4px; background: rgba(0,180,216,0.2); padding: 2px 8px; border-radius: 10px; width: fit-content; }
 .panel-item-mini .avatar-big { width: 52px !important; height: 52px !important; }
-
-/* ============================================================
-   CONTENIDO PRINCIPAL
-   ============================================================ */
 .main-content { margin-left: 220px; margin-right: 340px; flex-grow: 1; padding: 20px; background-color: var(--bg-main); width: calc(100% - 560px); }
 .header-app { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; background: var(--bg-card); padding: 12px 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 6px solid var(--primary); }
 .identity-container { display: flex; align-items: center; gap: 15px; }
@@ -112,40 +63,11 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
 .large-section-container { background: #ffffff; border-radius: 12px; padding: 22px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
 .area-header-block { font-size: 14px; font-weight: 800; color: #0c3ba0; border-bottom: 2px solid #e2e8f0; padding-bottom: 4px; margin: 15px 0 10px 0; text-transform: uppercase; letter-spacing: 0.5px; }
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-top: 10px; }
-
-/* ============================================================
-   TARJETAS CON FOTO 2.5X MÁS GRANDE
-   ============================================================ */
-.custom-item-card { 
-    background: #ffffff; 
-    border: 1px solid #e2e8f0; 
-    border-radius: 12px; 
-    padding: 18px; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 12px; 
-    border-top: 5px solid var(--primary); 
-    cursor: pointer; 
-    transition: transform 0.2s, box-shadow 0.2s; 
-}
+.custom-item-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px; border-top: 5px solid var(--primary); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
 .custom-item-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
 .custom-item-card.student-card { border-top-color: var(--accent); }
 .card-profile-header { display: flex; align-items: center; gap: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; }
-
-/* FOTO 2.5X MÁS GRANDE */
-.card-avatar-box { 
-    width: 175px !important; 
-    height: 175px !important; 
-    border-radius: 50%; 
-    background: linear-gradient(135deg, #e0f7fa, #b2ebf2); 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    overflow: hidden; 
-    border: 4px solid var(--primary-light); 
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(0,180,216,0.3);
-}
+.card-avatar-box { width: 175px !important; height: 175px !important; border-radius: 50%; background: linear-gradient(135deg, #e0f7fa, #b2ebf2); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 4px solid var(--primary-light); flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,180,216,0.3); }
 .card-avatar-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card-avatar-initials { font-size: 60px !important; font-weight: 800; color: var(--primary); }
 .card-main-title { font-size: 16px; font-weight: 800; color: #1e293b; display: block; line-height: 1.3; }
@@ -153,10 +75,6 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
 .cred-badge { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; margin-top: 4px; }
 .cred-unoi { background: #ede9fe; color: #6b21a8; border: 1px solid #c4b5fd; }
 .cred-creativa { background: #fef3c7; color: #d97706; border: 1px solid #fcd34d; }
-
-/* ============================================================
-   CALENDARIO
-   ============================================================ */
 .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
 .calendar-day-header { text-align: center; font-weight: 700; padding: 5px; background: #e2e8f0; font-size: 10.5px; border-radius: 4px; }
 .calendar-cell { min-height: 85px; background: var(--cal-blue-soft); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px; font-size: 9.5px; display: flex; flex-direction: column; gap: 3px; color: var(--cal-blue-text); }
@@ -166,104 +84,42 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
 .calendar-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .btn-print { padding: 6px 12px; border: none; background: var(--primary); color: white; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 12px; transition: all 0.2s; }
 .btn-print:hover { filter: brightness(1.1); transform: translateY(-1px); }
-
-/* ============================================================
-   MODALES
-   ============================================================ */
 .modal-overlay { position: fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center; z-index:1000; }
 .modal-card { background: white; border-radius: 14px; width: 92%; max-width: 750px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); display: flex; flex-direction: column; gap: 14px; max-height: 92vh; overflow-y: auto; }
 .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
 .modal-close { cursor: pointer; font-size: 20px; font-weight: bold; color: #64748b; }
 .modal-avatar-wrapper { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-
-/* FOTO MODAL 2.5X MÁS GRANDE */
-.modal-avatar-box { 
-    width: 250px !important; 
-    height: 250px !important; 
-    border-radius: 50%; 
-    background: linear-gradient(135deg, #e0f7fa, #b2ebf2); 
-    border: 5px solid var(--primary); 
-    overflow: hidden; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    box-shadow: 0 6px 20px rgba(12,59,160,0.25);
-}
+.modal-avatar-box { width: 250px !important; height: 250px !important; border-radius: 50%; background: linear-gradient(135deg, #e0f7fa, #b2ebf2); border: 5px solid var(--primary); overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(12,59,160,0.25); }
 .modal-avatar-box img { width:100%; height:100%; object-fit:cover; }
-
-/* ============================================================
-   PASE DE LISTA - NOMBRES Y APELLIDOS MEJORADOS
-   ============================================================ */
-.attendance-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
-.attendance-table th, .attendance-table td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; }
-.attendance-table th { background: #f1f5f9; color: #1e293b; font-weight: bold; }
-.attendance-options { display: flex; gap: 15px; }
-.attendance-options label { font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px; }
-
-/* NOMBRES EN PASE DE LISTA: NOMBRE ARRIBA, APELLIDOS ABAJO MÁS CHICO */
-.alumno-nombre-bloque { display: flex; flex-direction: column; line-height: 1.15; }
-.alumno-nombre-bloque .nombre-linea { font-size: 14px; font-weight: 800; color: #1e293b; }
-.alumno-nombre-bloque .apellidos-linea { font-size: 11px; font-weight: 600; color: #64748b; letter-spacing: 0.3px; }
-
-/* FOTO PASE DE LISTA 2.5X */
-.attendance-table .foto-pase-lista { 
-    width: 100px !important; 
-    height: 100px !important; 
-    border-radius: 10px; 
-    overflow: hidden; 
-    background: #e0f7fa; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    border: 3px solid var(--primary-light); 
-    flex-shrink: 0;
-    box-shadow: 0 3px 8px rgba(0,180,216,0.25);
-}
+.attendance-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12.5px; table-layout: fixed; }
+.attendance-table th, .attendance-table td { border: 1px solid var(--border-color); padding: 5px 8px; text-align: left; vertical-align: middle; }
+.attendance-table th { background: #f1f5f9; color: #1e293b; font-weight: bold; padding: 7px 8px; }
+.attendance-options { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.attendance-options label { font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 3px; font-size: 11.5px; white-space: nowrap; }
+.attendance-options .sig { font-weight: 600; color: #475569; font-size: 10.5px; }
+.alumno-nombre-bloque { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.alumno-nombre-bloque .nombre-linea { font-size: 13px; font-weight: 800; color: #1e293b; }
+.alumno-nombre-bloque .apellidos-linea { font-size: 10.5px; font-weight: 600; color: #64748b; letter-spacing: 0.2px; }
+.attendance-table .foto-pase-lista { width: 70px !important; height: 70px !important; border-radius: 8px; overflow: hidden; background: #e0f7fa; display: flex; align-items: center; justify-content: center; border: 2px solid var(--primary-light); flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,180,216,0.25); }
 .attendance-table .foto-pase-lista img { width:100%; height:100%; object-fit:cover; }
-.attendance-table .foto-pase-lista span { font-weight: bold; color: var(--primary); font-size: 36px; }
-
-/* BOTÓN GUARDAR MÁS GRANDE Y ABAJO */
-.btn-guardar-grande {
-    display: block !important;
-    width: 100% !important;
-    padding: 18px 24px !important;
-    font-size: 18px !important;
-    font-weight: 900 !important;
-    background: linear-gradient(135deg, #059669, #10b981) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 12px !important;
-    cursor: pointer !important;
-    margin-top: 24px !important;
-    box-shadow: 0 6px 18px rgba(5,150,105,0.35) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    transition: all 0.25s !important;
-}
+.attendance-table .foto-pase-lista span { font-weight: bold; color: var(--primary); font-size: 24px; }
+.attendance-table .alumno-celda { display: flex; align-items: center; gap: 8px; }
+.attendance-table select { padding: 4px 5px; font-size: 11.5px; border-radius: 4px; border: 1px solid var(--border-color); width: 100%; }
+.attendance-table .prom-badge { font-weight: 900; font-size: 14px; color: #0c3ba0; background: #e0f7fa; padding: 4px 8px; border-radius: 6px; display: inline-block; min-width: 42px; text-align: center; }
+.attendance-table .just-box { margin-top: 4px; }
+.btn-guardar-grande { display: block !important; width: 100% !important; padding: 18px 24px !important; font-size: 18px !important; font-weight: 900 !important; background: linear-gradient(135deg, #059669, #10b981) !important; color: white !important; border: none !important; border-radius: 12px !important; cursor: pointer !important; margin-top: 24px !important; box-shadow: 0 6px 18px rgba(5,150,105,0.35) !important; text-transform: uppercase !important; letter-spacing: 1px !important; transition: all 0.25s !important; }
 .btn-guardar-grande:hover { transform: translateY(-3px) !important; box-shadow: 0 10px 26px rgba(5,150,105,0.5) !important; }
-
-/* PANEL INFO CLASE PLAN ANUAL */
-.clase-info-plan {
-    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
-    border-left: 6px solid #0288d1;
-    padding: 16px 20px;
-    border-radius: 10px;
-    margin: 14px 0;
-    box-shadow: 0 2px 8px rgba(2,136,209,0.15);
-}
-.clase-info-plan .titulo-clase { font-size: 16px; font-weight: 800; color: #0c4a6e; margin-bottom: 6px; }
+.clase-info-plan { background: linear-gradient(135deg, #e0f2fe, #bae6fd); border-left: 6px solid #0288d1; padding: 16px 20px; border-radius: 10px; margin: 14px 0; box-shadow: 0 2px 8px rgba(2,136,209,0.15); position: relative; }
+.clase-info-plan .titulo-clase { font-size: 16px; font-weight: 800; color: #0c4a6e; margin-bottom: 6px; padding-right: 120px; }
 .clase-info-plan .detalle-clase { font-size: 13px; color: #075985; line-height: 1.5; }
 .clase-info-plan .modulo-badge { display: inline-block; background: #0288d1; color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 800; margin-right: 8px; }
-
-/* ============================================================
-   HISTORIAL POR TRIMESTRE
-   ============================================================ */
+.btn-edit-clase-panel { position: absolute; top: 12px; right: 14px; background: #0288d1; color: white; border: none; border-radius: 6px; padding: 5px 10px; font-size: 11px; font-weight: 700; cursor: pointer; }
+.btn-edit-clase-panel:hover { filter: brightness(1.1); }
 .historial-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
 .historial-tab { padding: 10px 22px; background: #e2e8f0; color: #475569; border: none; border-radius: 10px; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s; }
 .historial-tab.active { background: var(--primary); color: white; box-shadow: 0 3px 10px rgba(12,59,160,0.3); }
 .historial-tab:hover { background: #cbd5e1; }
 .historial-tab.active:hover { background: var(--primary); }
-
 .historial-card { background: white; border: 1px solid #cbd5e1; border-radius: 12px; padding: 18px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
 .historial-card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 14px; }
 .historial-card-header h3 { font-size: 15px; color: var(--primary); font-weight: 800; }
@@ -276,10 +132,6 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
 .stat-box.retardo .stat-value { color: #e65100; }
 .stat-box.justificado .stat-value { color: #0288d1; }
 .stat-box.promedio .stat-value { color: #6b21a8; }
-
-/* ============================================================
-   IMPRESIÓN PDF CARTA
-   ============================================================ */
 .print-letter-report { display: none; }
 @media print {
     body { background: white !important; padding: 0 !important; }
@@ -296,8 +148,6 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
 .print-table { width: 100%; border-collapse: collapse; font-size: 11px; }
 .print-table th, .print-table td { border: 1px solid var(--border-color); padding: 5px 8px; text-align: left; }
 .print-table th { background-color: #f1f5f9; color: #1e293b; font-weight: bold; }
-
-/* REPORTE CALIFICACIONES PARA IMPRIMIR */
 .print-calif-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 10px; }
 .print-calif-table th, .print-calif-table td { border: 1px solid #333; padding: 6px 8px; text-align: center; }
 .print-calif-table th { background: #0c3ba0; color: white; font-weight: 800; }
@@ -307,7 +157,6 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
 .print-header-reporte { text-align: center; border-bottom: 3px solid #0c3ba0; padding-bottom: 10px; margin-bottom: 16px; }
 .print-header-reporte h2 { color: #0c3ba0; font-size: 20px; margin: 0; border: none; padding: 0; display: block; }
 .print-header-reporte h3 { color: #475569; font-size: 13px; font-weight: normal; margin-top: 4px; }
-
 .btn-grupo-card { padding: 12px 20px; font-size: 13px; font-weight: 700; border-radius: 10px; border: 1px solid #cbd5e1; background: #ffffff; color: #334155; cursor: pointer; transition: all 0.2s; min-width: 100px; text-align: center; }
 .btn-grupo-card:hover { border-color: var(--primary-light); background: #f0f9ff; }
 .btn-grupo-card.active { background: #e0f2fe; color: #0369a1; border: 2px solid #0288d1; font-weight: 800; box-shadow: 0 2px 6px rgba(2,136,209,0.25); }
@@ -370,6 +219,37 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
 .cred-section h4 { font-size: 12px; font-weight: 800; margin-bottom: 8px; }
 .cred-section.unoi h4 { color: #6b21a8; }
 .cred-section.creativa h4 { color: #d97706; }
+.print-clase-detalle { margin-bottom: 14px; page-break-inside: avoid; }
+.print-clase-detalle .clase-titulo { background: #0c3ba0; color: white; padding: 5px 10px; font-size: 12px; font-weight: bold; border-radius: 3px; }
+.print-clase-detalle table { width: 100%; border-collapse: collapse; font-size: 10.5px; margin-top: 4px; }
+.print-clase-detalle th, .print-clase-detalle td { border: 1px solid #666; padding: 4px 6px; text-align: center; }
+.print-clase-detalle th { background: #e2e8f0; }
+.print-clase-detalle td.nombre { text-align: left; font-weight: 700; }
+.print-clase-detalle .badge-p { color: #15803d; font-weight: 800; }
+.print-clase-detalle .badge-f { color: #991b1b; font-weight: 800; }
+.print-clase-detalle .badge-r { color: #c2410c; font-weight: 800; }
+.print-clase-detalle .badge-j { color: #0369a1; font-weight: 800; }
+.print-foto-alumno { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid #0c3ba0; }
+.print-foto-alumno-initial { display: inline-flex; width: 90px; height: 90px; border-radius: 50%; background: #e0f7fa; align-items: center; justify-content: center; font-size: 36px; font-weight: 800; color: #0c3ba0; border: 3px solid #0c3ba0; }
+.parcial-sep { background: #e0f2fe; color: #0369a1; font-weight: 800; font-size: 12px; padding: 6px 12px; border-radius: 6px; margin: 12px 0 6px; border-left: 4px solid #0288d1; }
+/* AJUSTE 6: CREDENCIAL VIRTUAL */
+.credencial-virtual { width: 340px; background: linear-gradient(135deg, #0c3ba0, #0288d1); border-radius: 18px; padding: 18px; color: white; box-shadow: 0 10px 30px rgba(12,59,160,0.4); font-family: 'Segoe UI', Tahoma, sans-serif; }
+.credencial-virtual .cv-header { display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px; margin-bottom: 12px; }
+.credencial-virtual .cv-header img { width: 40px; height: 40px; border-radius: 50%; background: white; }
+.credencial-virtual .cv-header .cv-title { font-size: 14px; font-weight: 800; line-height: 1.1; }
+.credencial-virtual .cv-header .cv-sub { font-size: 10px; opacity: 0.85; }
+.credencial-virtual .cv-body { display: flex; gap: 12px; align-items: center; }
+.credencial-virtual .cv-foto { width: 90px; height: 90px; border-radius: 12px; overflow: hidden; border: 3px solid white; background: #e0f7fa; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.credencial-virtual .cv-foto img { width: 100%; height: 100%; object-fit: cover; }
+.credencial-virtual .cv-foto span { font-size: 34px; font-weight: 800; color: #0c3ba0; }
+.credencial-virtual .cv-info .cv-nombre { font-size: 14px; font-weight: 800; line-height: 1.2; }
+.credencial-virtual .cv-info .cv-grupo { font-size: 11px; opacity: 0.9; margin-top: 2px; }
+.credencial-virtual .cv-info .cv-curp { font-size: 9px; opacity: 0.8; margin-top: 4px; font-family: monospace; }
+.credencial-virtual .cv-cred { margin-top: 10px; background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 10px; font-size: 10px; }
+.credencial-virtual .cv-cred .cv-cred-row { display: flex; justify-content: space-between; padding: 2px 0; }
+.credencial-virtual .cv-cred .cv-cred-lbl { opacity: 0.8; }
+.credencial-virtual .cv-cred .cv-cred-val { font-family: monospace; font-weight: 700; }
+.credencial-virtual .cv-foot { margin-top: 10px; font-size: 8px; opacity: 0.7; text-align: center; }
 </style>
 </head>
 <body>
@@ -510,9 +390,9 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
                         <label style="font-size:11px; font-weight:800; color:#1e293b; text-transform:uppercase; display:block; margin-bottom:6px;">4️⃣ Fechas de Clase:</label>
                         <div id="asistencia-fechas-botones" style="display:flex; flex-wrap:wrap; gap:8px; padding:12px; background:#ffffff; border-radius:8px; border:1px solid #cbd5e1; min-height:50px; align-items:center;"><span style="font-size:12px; color:#64748b; font-style:italic;">Selecciona un grupo.</span></div>
                     </div>
-                    
-                    <!-- PANEL INFO CLASE -->
+
                     <div id="clase-info-plan-panel" class="clase-info-plan" style="display:none;">
+                        <button class="btn-edit-clase-panel" onclick="editarClaseDesdePanel()">✏️ Editar clase</button>
                         <div class="titulo-clase" id="clase-info-titulo">Selecciona una fecha</div>
                         <div class="detalle-clase" id="clase-info-detalle"></div>
                     </div>
@@ -524,10 +404,9 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
                         </div>
                         <button class="btn-print" id="btn-toggle-no-clase" style="background:#dc2626; font-size:11.5px;" onclick="abrirModalMotivoNoClase()">🚫 Marcar Sin Clase</button>
                     </div>
-                    
+
                     <div id="asistencia-tabla-wrapper"><p style="font-style:italic; color:#64748b; padding:15px; text-align:center;">Selecciona una fecha.</p></div>
-                    
-                    <!-- BOTÓN GUARDAR GRANDE ABAJO -->
+
                     <button class="btn-guardar-grande" onclick="guardarAsistenciaGoogleSheets()">💾 GUARDAR ASISTENCIA</button>
                 </div>
                 <div id="subseccion-resumen-trimestral" style="display:none; margin-top:15px;">
@@ -544,15 +423,17 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
                             </select>
                         </div>
                     </div>
-                    <div style="margin-bottom:12px;">
+                    <div style="margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap;">
                         <button class="btn-print" style="background:#dc2626; font-size:13px; padding:10px 20px;" onclick="imprimirCalificacionesGrupo()">🖨️ Imprimir Calificaciones (PDF Carta)</button>
+                        <button class="btn-print" style="background:#6b21a8; font-size:13px; padding:10px 20px;" onclick="imprimirDetallePorClase()">🖨️ Detalle por Clase (PDF)</button>
+                        <button class="btn-print" style="background:#0288d1; font-size:13px; padding:10px 20px;" onclick="verDetallePorClaseHTML()">👁️ Ver Detalle por Clase (HTML)</button>
                     </div>
                     <div id="resumen-trimestral-tabla-wrapper" style="margin-top:15px;"></div>
+                    <div id="detalle-por-clase-wrapper" style="margin-top:20px;"></div>
                 </div>
             </div>
         </div>
 
-        <!-- NUEVA SECCIÓN: HISTORIAL POR ALUMNO -->
         <div id="historial-sec" class="app-section">
             <div class="large-section-container">
                 <h2><span>📊 Historial de Asistencia por Alumno</span>
@@ -684,6 +565,7 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
                                 <option value="todos">Todos</option><option value="activos">Activos</option><option value="inactivos">Inactivos</option>
                             </select>
                             <button class="btn-print" style="background:#0288d1;" onclick="abrirModalEditarUsuario('maestro', null)">➕ Nuevo</button>
+                            <button class="btn-print" style="background:#dc2626;" onclick="deduplicarUsuarios('maestro')">🧹 Quitar duplicados</button>
                         </div>
                         <div id="admin-tabla-maestros" class="admin-table-wrapper"></div>
                     </div>
@@ -699,6 +581,7 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
                                 <option value="todos">Todos</option><option value="activos">Activos</option><option value="inactivos">Inactivos</option>
                             </select>
                             <button class="btn-print" style="background:#0288d1;" onclick="abrirModalEditarUsuario('alumno', null)">➕ Nuevo</button>
+                            <button class="btn-print" style="background:#dc2626;" onclick="deduplicarUsuarios('alumno')">🧹 Quitar duplicados</button>
                         </div>
                         <div id="admin-tabla-alumnos" class="admin-table-wrapper"></div>
                     </div>
@@ -781,7 +664,7 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
             <div class="large-section-container">
                 <h2><span>📥 Importar / Exportar Excel</span><button class="btn-print" style="background:#475569;" onclick="recargarTodoDesdeFirebase()">🔄 Recargar</button></h2>
                 <p style="font-size:11px; color:#0369a1; background:#e0f2fe; padding:8px 12px; border-radius:6px; margin-bottom:12px;">💡 <strong>Importación MERGE:</strong> Nunca borra datos, solo agrega nuevos o actualiza si la CURP/Grado+Fecha+Hora coincide. Las credenciales <strong>UNOI</strong> y <strong>Creativa</strong> se importan desde el Excel (si vienen) o se conservan las existentes.</p>
-                
+
                 <div style="margin-bottom:15px; text-align:center;">
                     <button class="btn-print" style="background:#6b21a8; font-size:13px; padding:10px 24px;" onclick="exportarTodoExcel()">📥 Exportar TODO en un solo Excel</button>
                 </div>
@@ -873,14 +756,34 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
         <div class="modal-header"><h3 id="modal-user-title">Detalles</h3><span class="modal-close" onclick="closeUserModal()">✖</span></div>
         <div class="modal-avatar-wrapper">
             <div class="modal-avatar-box" id="modal-avatar-container">🤖</div>
-            <button class="btn-print" style="font-size:11px; background:#475569;" onclick="document.getElementById('modal-file-input').click()">📷 Cambiar Foto</button>
+            <div style="display:flex; gap:6px; justify-content:center; flex-wrap:wrap;">
+                <button class="btn-print" style="font-size:11px; background:#475569;" onclick="document.getElementById('modal-file-input').click()">📷 Cambiar Foto</button>
+                <button class="btn-print" style="font-size:11px; background:#dc2626;" onclick="quitarFotoUsuarioModal()">🗑️ Quitar Foto</button>
+            </div>
             <input type="file" id="modal-file-input" accept="image/*" style="display:none;" onchange="uploadModalPhotoImgBB(event)">
         </div>
         <div id="modal-fields-body" style="display:flex; flex-direction:column; gap:6px; font-size:13px; max-height: 400px; overflow-y: auto;"></div>
-        <div style="display:flex; gap:10px; margin-top:10px;">
+        <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap;">
             <button class="btn-print" style="flex:1;" onclick="copiarFichaIndividualModal()">📋 Copiar Ficha</button>
             <button class="btn-print" style="flex:1; background:#6b21a8;" onclick="copiarCredencialesCompletas()">🔑 Copiar Credenciales</button>
-            <button class="btn-print" style="flex:1; background:#059669;" onclick="guardarCambiosModalUsuario()">💾 Guardar</button>
+            <button class="btn-print" style="flex:1; background:#059669;" onclick="abrirEdicionDesdeModal()">✏️ Editar datos</button>
+            <!-- AJUSTE 6: botón de credencial virtual -->
+            <button class="btn-print" style="flex:1; background:#0288d1;" onclick="abrirCredencialVirtualModal()">🎫 Credencial virtual</button>
+        </div>
+    </div>
+</div>
+
+<!-- AJUSTE 6: MODAL CREDENCIAL VIRTUAL -->
+<div class="modal-overlay" id="modal-credencial-virtual">
+    <div class="modal-card" style="max-width:500px;">
+        <div class="modal-header"><h3>🎫 Credencial Virtual</h3><span class="modal-close" onclick="cerrarCredencialVirtual()">✖</span></div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+            <div id="credencial-virtual-render"></div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+                <button class="btn-print" style="background:#0288d1;" onclick="descargarCredencialPNG()">📷 Guardar captura PNG</button>
+                <button class="btn-print" style="background:#64748b;" onclick="cerrarCredencialVirtual()">Cerrar</button>
+            </div>
+            <small style="color:#64748b; font-size:10px; text-align:center;">La captura se descarga como imagen PNG lista para enviar o compartir.</small>
         </div>
     </div>
 </div>
@@ -924,6 +827,8 @@ h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); border-bottom:
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<!-- AJUSTE 6: html2canvas para captura de credencial -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
 <script>
 const firebaseConfig = {
@@ -977,83 +882,44 @@ function getGradeStyle(grado) {
 
 function normalizarGrado(g) {
     if (!g) return "";
-    return g.toString()
-        .trim()
-        .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    return g.toString().trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         .replace(/[\s°\-\._]/g, "")
-        .replace(/primero/gi, "1")
-        .replace(/segundo/gi, "2")
-        .replace(/tercero/gi, "3")
-        .replace(/cuarto/gi, "4")
-        .replace(/quinto/gi, "5")
-        .replace(/sexto/gi, "6");
+        .replace(/primero/gi, "1").replace(/segundo/gi, "2").replace(/tercero/gi, "3")
+        .replace(/cuarto/gi, "4").replace(/quinto/gi, "5").replace(/sexto/gi, "6");
 }
 
-function gradosCoinciden(a, b) {
-    return normalizarGrado(a) === normalizarGrado(b);
-}
+function gradosCoinciden(a, b) { return normalizarGrado(a) === normalizarGrado(b); }
 
 function normalizarFecha(input) {
     if (input === null || input === undefined || input === "") return "";
-    if (input instanceof Date) {
-        if (isNaN(input.getTime())) return "";
-        return `${input.getFullYear()}-${String(input.getMonth()+1).padStart(2,'0')}-${String(input.getDate()).padStart(2,'0')}`;
-    }
+    if (input instanceof Date) { if (isNaN(input.getTime())) return ""; return `${input.getFullYear()}-${String(input.getMonth()+1).padStart(2,'0')}-${String(input.getDate()).padStart(2,'0')}`; }
     if (typeof input === "number" || /^\d+(\.\d+)?$/.test(String(input).trim())) {
         let n = parseFloat(input);
-        if (n > 25000 && n < 80000) {
-            let ms = Math.round((n - 25569) * 86400 * 1000);
-            let d = new Date(ms);
-            if (!isNaN(d.getTime())) return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`;
-        }
-        if (n > 1000000000 && n < 9999999999) {
-            let d = new Date(n * 1000);
-            if (!isNaN(d.getTime())) return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-        }
-        if (n > 1000000000000 && n < 9999999999999) {
-            let d = new Date(n);
-            if (!isNaN(d.getTime())) return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-        }
+        if (n > 25000 && n < 80000) { let ms = Math.round((n - 25569) * 86400 * 1000); let d = new Date(ms); if (!isNaN(d.getTime())) return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`; }
+        if (n > 1000000000 && n < 9999999999) { let d = new Date(n * 1000); if (!isNaN(d.getTime())) return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+        if (n > 1000000000000 && n < 9999999999999) { let d = new Date(n); if (!isNaN(d.getTime())) return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
     }
-    let s = String(input).trim();
-    if (!s) return "";
+    let s = String(input).trim(); if (!s) return "";
     if (/^\d{4}-\d{2}-\d{2}/.test(s)) return s.substring(0, 10);
     let m2 = s.match(/^(\d{4})[\/\-\.](\d{1,2})[\/\-\.](\d{1,2})$/);
     if (m2) return `${m2[1]}-${m2[2].padStart(2,'0')}-${m2[3].padStart(2,'0')}`;
     let m1 = s.match(/^(\d{1,2})[\/\-\.](\d{1,2})[\/\-\.](\d{2,4})$/);
     if (m1) {
-        let a = parseInt(m1[1]), b = parseInt(m1[2]);
-        let dia, mes;
-        if (a > 12 && b <= 12) { dia = a; mes = b; }
-        else if (b > 12 && a <= 12) { dia = b; mes = a; }
-        else { dia = a; mes = b; }
+        let a = parseInt(m1[1]), b = parseInt(m1[2]); let dia, mes;
+        if (a > 12 && b <= 12) { dia = a; mes = b; } else if (b > 12 && a <= 12) { dia = b; mes = a; } else { dia = a; mes = b; }
         let y = m1[3].length === 2 ? (parseInt(m1[3]) < 30 ? "20" + m1[3] : "19" + m1[3]) : m1[3];
         if (dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12) return `${y}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
     }
     let meses = { enero:1, ene:1, febrero:2, feb:2, marzo:3, mar:3, abril:4, abr:4, mayo:5, may:5, junio:6, jun:6, julio:7, jul:7, agosto:8, ago:8, septiembre:9, setiembre:9, sep:9, sept:9, set:9, octubre:10, oct:10, noviembre:11, nov:11, diciembre:12, dic:12 };
     let lower = s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[,]/g, " ").replace(/\s+/g, " ").trim();
     let m3 = lower.match(/(\d{1,2})\s*(?:de\s+)?([a-z]+)\s*(?:de\s+|del\s+)?\s*(\d{2,4})/);
-    if (m3 && meses[m3[2]]) {
-        let dia = parseInt(m3[1]), mes = meses[m3[2]];
-        let y = m3[3].length === 2 ? "20" + m3[3] : m3[3];
-        if (dia >= 1 && dia <= 31) return `${y}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
-    }
+    if (m3 && meses[m3[2]]) { let dia = parseInt(m3[1]), mes = meses[m3[2]]; let y = m3[3].length === 2 ? "20" + m3[3] : m3[3]; if (dia >= 1 && dia <= 31) return `${y}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`; }
     let m4 = lower.match(/([a-z]+)\s*(\d{1,2})\s*(?:de\s+|del\s+)?\s*(\d{2,4})/);
-    if (m4 && meses[m4[1]]) {
-        let mes = meses[m4[1]], dia = parseInt(m4[2]);
-        let y = m4[3].length === 2 ? "20" + m4[3] : m4[3];
-        if (dia >= 1 && dia <= 31) return `${y}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
-    }
+    if (m4 && meses[m4[1]]) { let mes = meses[m4[1]], dia = parseInt(m4[2]); let y = m4[3].length === 2 ? "20" + m4[3] : m4[3]; if (dia >= 1 && dia <= 31) return `${y}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`; }
     let m5 = lower.match(/^(\d{1,2})\s*(?:de\s+)?([a-z]+)$/);
-    if (m5 && meses[m5[2]]) {
-        let dia = parseInt(m5[1]), mes = meses[m5[2]], y = new Date().getFullYear();
-        if (dia >= 1 && dia <= 31) return `${y}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
-    }
-    let dp = new Date(s);
-    if (!isNaN(dp.getTime())) return `${dp.getFullYear()}-${String(dp.getMonth()+1).padStart(2,'0')}-${String(dp.getDate()).padStart(2,'0')}`;
-    console.warn("⚠️ No se pudo normalizar fecha:", input);
-    return "";
+    if (m5 && meses[m5[2]]) { let dia = parseInt(m5[1]), mes = meses[m5[2]], y = new Date().getFullYear(); if (dia >= 1 && dia <= 31) return `${y}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`; }
+    let dp = new Date(s); if (!isNaN(dp.getTime())) return `${dp.getFullYear()}-${String(dp.getMonth()+1).padStart(2,'0')}-${String(dp.getDate()).padStart(2,'0')}`;
+    console.warn("⚠️ No se pudo normalizar fecha:", input); return "";
 }
 
 function normalizarHora(input) {
@@ -1061,26 +927,13 @@ function normalizarHora(input) {
     if (input instanceof Date) return `${String(input.getHours()).padStart(2,'0')}:${String(input.getMinutes()).padStart(2,'0')}`;
     if (typeof input === "number" || /^\d+(\.\d+)?$/.test(String(input).trim())) {
         let n = parseFloat(input);
-        if (n >= 0 && n < 1) {
-            let totalMin = Math.round(n * 24 * 60);
-            return `${String(Math.floor(totalMin/60)).padStart(2,'0')}:${String(totalMin%60).padStart(2,'0')}`;
-        }
-        if (n >= 1 && n < 10) {
-            let h = Math.floor(n);
-            return `${String(h).padStart(2,'0')}:${String(Math.round((n-h)*60)).padStart(2,'0')}`;
-        }
+        if (n >= 0 && n < 1) { let totalMin = Math.round(n * 24 * 60); return `${String(Math.floor(totalMin/60)).padStart(2,'0')}:${String(totalMin%60).padStart(2,'0')}`; }
+        if (n >= 1 && n < 10) { let h = Math.floor(n); return `${String(h).padStart(2,'0')}:${String(Math.round((n-h)*60)).padStart(2,'0')}`; }
     }
     let s = String(input).trim();
     let m = s.match(/^(\d{1,2})[:\.](\d{1,2})(?::\d{1,2})?\s*(a\.?m\.?|p\.?m\.?)?/i);
-    if (m) {
-        let h = parseInt(m[1]), mi = parseInt(m[2]);
-        let ap = (m[3] || "").toLowerCase().replace(/\./g, "");
-        if ((ap === "pm" || ap === "p m") && h < 12) h += 12;
-        if ((ap === "am" || ap === "a m") && h === 12) h = 0;
-        if (h >= 0 && h < 24 && mi >= 0 && mi < 60) return `${String(h).padStart(2,'0')}:${String(mi).padStart(2,'0')}`;
-    }
-    let n2 = parseInt(s);
-    if (!isNaN(n2) && n2 >= 0 && n2 < 24 && /^\d+$/.test(s)) return `${String(n2).padStart(2,'0')}:00`;
+    if (m) { let h = parseInt(m[1]), mi = parseInt(m[2]); let ap = (m[3] || "").toLowerCase().replace(/\./g, ""); if ((ap === "pm" || ap === "p m") && h < 12) h += 12; if ((ap === "am" || ap === "a m") && h === 12) h = 0; if (h >= 0 && h < 24 && mi >= 0 && mi < 60) return `${String(h).padStart(2,'0')}:${String(mi).padStart(2,'0')}`; }
+    let n2 = parseInt(s); if (!isNaN(n2) && n2 >= 0 && n2 < 24 && /^\d+$/.test(s)) return `${String(n2).padStart(2,'0')}:00`;
     return "00:00";
 }
 
@@ -1194,6 +1047,32 @@ function obtenerNombreUsuario(u) {
     return `${n} ${p} ${m}`.trim() || "Usuario";
 }
 
+function obtenerNombrePila(u) {
+    if (!u) return "";
+    if (u.Nombre) return u.Nombre.toString().trim();
+    if (u.nombre) return u.nombre.toString().trim();
+    let nk = Object.keys(u).find(k => k.match(/^nombre$/i));
+    if (nk) return (u[nk] || "").toString().trim();
+    let full = obtenerNombreUsuario(u);
+    let ap = obtenerApellidos(u);
+    if (ap && full.endsWith(ap)) return full.slice(0, full.length - ap.length).trim();
+    return full.split(/\s+/)[0] || "";
+}
+
+function obtenerApellidos(u) {
+    if (!u) return "";
+    let p = "", m = "";
+    let pk = Object.keys(u).find(k => k.match(/(paterno|apellido_paterno|apellido paterno)/i));
+    let mk = Object.keys(u).find(k => k.match(/(materno|apellido_materno|apellido materno)/i));
+    if (pk) p = (u[pk] || "").toString().trim();
+    if (mk) m = (u[mk] || "").toString().trim();
+    if (p || m) return `${p} ${m}`.trim();
+    let full = obtenerNombreUsuario(u);
+    let n = u.Nombre || u.nombre || "";
+    if (n && full.startsWith(n)) return full.slice(n.length).trim();
+    return full.split(/\s+/).slice(1).join(" ");
+}
+
 function obtenerApellidoPaterno(u) {
     if (u) {
         let k = Object.keys(u).find(x => x.match(/(paterno|apellido_paterno|apellido paterno)/i));
@@ -1203,7 +1082,13 @@ function obtenerApellidoPaterno(u) {
 }
 
 function ordenarPorApellido(l) {
-    return l.sort((a, b) => obtenerApellidoPaterno(a).localeCompare(obtenerApellidoPaterno(b), 'es', { sensitivity: 'base' }));
+    return l.sort((a, b) => {
+        let apA = obtenerApellidoPaterno(a) || obtenerApellidos(a);
+        let apB = obtenerApellidoPaterno(b) || obtenerApellidos(b);
+        let c = apA.localeCompare(apB, 'es', { sensitivity: 'base' });
+        if (c !== 0) return c;
+        return obtenerNombreUsuario(a).localeCompare(obtenerNombreUsuario(b), 'es', { sensitivity: 'base' });
+    });
 }
 
 function esInactivo(u) {
@@ -1258,7 +1143,6 @@ async function cargarDatosDesdeSheets() {
             let fR = c["fechaclase"] || c["fecha"] || c["inicio"] || c["fechadeclase"] || c["fechaclases"] || "";
             let hR = c["hora"] || c["horadeclase"] || "";
             let fechaNorm = normalizarFecha(fR);
-            if (!fechaNorm && fR) console.warn(`⚠️ Clase #${idx} sin fecha válida. Valor original:`, fR);
             return {
                 _raw: s, _index: idx, _fechaOriginal: fR,
                 modulo: c["modulo"] || c["módulo"] || "-",
@@ -1270,13 +1154,7 @@ async function cargarDatosDesdeSheets() {
                 fechaClase: fechaNorm
             };
         });
-        
-        let clasesSinFecha = clasesRaw.filter(c => !c.fechaClase);
-        if (clasesSinFecha.length > 0) console.warn(`⚠️ ${clasesSinFecha.length} clases sin fecha válida`);
         state.syllabus = clasesRaw.filter(c => c.fechaClase);
-        
-        let fueraDeRango = state.syllabus.filter(c => { let tp = obtenerTrimestreParcialPorFecha(c.fechaClase); return !tp.trimestre; });
-        if (fueraDeRango.length > 0) console.warn(`⚠️ ${fueraDeRango.length} clases FUERA de todos los rangos:`);
 
         state.eventos = eArr.map(e => {
             let c = {}; for (let k in e) c[normalizeKey(k)] = e[k];
@@ -1464,27 +1342,59 @@ async function uploadModalPhotoImgBB(event) {
             let pu = j.data.url;
             currentUserModal.Foto = pu;
             document.getElementById('modal-avatar-container').innerHTML = `<img src="${pu}">`;
-            let esM = obtenerListaMaestrosProcesada(true).some(m => obtenerNombreUsuario(m) === obtenerNombreUsuario(currentUserModal));
-            let nodo = esM ? 'maestros' : 'alumnos';
-            let lista = esM ? obtenerListaMaestrosProcesada(true) : obtenerListaAlumnosProcesada(true);
-            let i = lista.findIndex(x => obtenerNombreUsuario(x) === obtenerNombreUsuario(currentUserModal));
-            if (i >= 0) { lista[i].Foto = pu; await db.ref(nodo).set(lista); }
-            renderizarMaestrosEspeciales(); renderizarAlumnosEspeciales();
+            await guardarUsuarioEnFirebase(currentUserModal);
             updateSyncStatus("sync-success", "✅ Foto guardada.");
         }
     } catch (e) { console.error(e); }
 }
 
-async function guardarCambiosModalUsuario() {
+async function quitarFotoUsuarioModal() {
     if (!currentUserModal) return;
-    let n = obtenerNombreUsuario(currentUserModal);
-    let esM = obtenerListaMaestrosProcesada(true).some(m => obtenerNombreUsuario(m) === n);
+    if (!confirm("¿Quitar la foto de este usuario?")) return;
+    Object.keys(currentUserModal).forEach(k => { if (k.match(/(foto|imagen|img|picture|avatar)/i)) delete currentUserModal[k]; });
+    document.getElementById('modal-avatar-container').innerHTML = `<span style="font-size:80px;font-weight:bold;color:var(--primary);">${obtenerNombreUsuario(currentUserModal).charAt(0)}</span>`;
+    await guardarUsuarioEnFirebase(currentUserModal);
+    alert("🗑️ Foto eliminada.");
+}
+
+// AJUSTE 1: clave única reforzada con apellido paterno y grado para distinguir homónimos
+function claveUnicaUsuario(u) {
+    let curp = (u.CURP || u.curp || "").toString().trim().toUpperCase();
+    if (curp && curp.length >= 10) return "CURP:" + curp;
+    let nom = obtenerNombreUsuario(u).toString().trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ");
+    let grupo = (u.GradoGrupo || u.gradogrupo || "").toString().trim().toLowerCase();
+    let area = (u.Area || u.area || "").toString().trim().toLowerCase();
+    return "NOMBRE:" + nom + "|G:" + grupo + "|A:" + area;
+}
+
+async function guardarUsuarioEnFirebase(userObj) {
+    let clave = claveUnicaUsuario(userObj);
+    let esM = obtenerListaMaestrosProcesada(true).some(m => claveUnicaUsuario(m) === clave);
     let nodo = esM ? 'maestros' : 'alumnos';
     let lista = esM ? obtenerListaMaestrosProcesada(true) : obtenerListaAlumnosProcesada(true);
-    let i = lista.findIndex(x => obtenerNombreUsuario(x) === n);
-    if (i >= 0) { lista[i] = currentUserModal; try { await db.ref(nodo).set(lista); } catch (e) { alert(e.message); return; } }
-    renderizarMaestrosEspeciales(); renderizarAlumnosEspeciales(); closeUserModal();
+    let i = lista.findIndex(x => claveUnicaUsuario(x) === clave);
+    if (i >= 0) lista[i] = userObj; else lista.push(userObj);
+    try { await db.ref(nodo).set(lista); } catch (e) { alert(e.message); return; }
+    renderizarMaestrosEspeciales(); renderizarAlumnosEspeciales();
+    if (document.getElementById('admin-tabla-maestros')) renderAdminMaestros();
+    if (document.getElementById('admin-tabla-alumnos')) renderAdminAlumnos();
+}
+
+async function guardarCambiosModalUsuario() {
+    if (!currentUserModal) return;
+    await guardarUsuarioEnFirebase(currentUserModal);
+    closeUserModal();
     alert("💾 Guardado.");
+}
+
+function abrirEdicionDesdeModal() {
+    if (!currentUserModal) return;
+    let clave = claveUnicaUsuario(currentUserModal);
+    let esM = obtenerListaMaestrosProcesada(true).some(m => claveUnicaUsuario(m) === clave);
+    closeUserModal();
+    switchTab('config-sec');
+    cambiarTabAdmin(esM ? 'maestros' : 'alumnos');
+    setTimeout(() => abrirModalEditarUsuario(esM ? 'maestro' : 'alumno', clave), 150);
 }
 
 function copiarFichaIndividualModal() {
@@ -1548,7 +1458,7 @@ function procesarYMostrarCumpleaños() {
         let d = document.createElement("div");
         d.className = `panel-item-mini ${x.d===0?'active-today':''}`;
         d.style.cssText = "display:flex; gap:10px; align-items:center; padding:12px;";
-        let avatarHTML = x.foto 
+        let avatarHTML = x.foto
             ? `<img src="${x.foto}" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid #e91e63;flex-shrink:0;">`
             : `<div style="width:52px;height:52px;border-radius:50%;background:#e0f7fa;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#0c3ba0;font-size:20px;border:3px solid #e91e63;flex-shrink:0;">${x.inicial}</div>`;
         d.innerHTML = `${avatarHTML}<div style="flex:1; min-width:0;"><strong style="display:block;font-size:13px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${x.nombre}</strong><span style="font-size:11px;color:#94a3b8;font-weight:700;">🏫 ${x.grupo}</span><br><span style="font-size:11px;color:#e2e8f0;">🎉 ${x.fechaTexto}</span><span class="panel-item-countdown">${x.d===0?'¡Hoy!':'Faltan '+x.d+'d'}</span></div>`;
@@ -1631,11 +1541,11 @@ function poblarDesplegableGruposAsistencia() {
     a.forEach(x => { let g = x.GradoGrupo || x.gradogrupo; if (g) gs.add(g.toString().trim()); });
     if (gs.size === 0) state.syllabus.forEach(s => { if (s.grado) gs.add(s.grado.trim()); });
     let lg = Array.from(gs).sort(); let h = ""; let auto = "";
-    lg.forEach(g => { 
+    lg.forEach(g => {
         let th = state.syllabus.some(x => gradosCoinciden(x.grado, g) && x.fechaClase === hoyStr);
         let numClases = state.syllabus.filter(x => gradosCoinciden(x.grado, g)).length;
-        if (th && !auto) auto = g; 
-        h += `<button class="btn-grupo-card ${th?'is-today-group':''}" id="btn-grp-${g}" onclick="clickSeleccionarGrupo('${g}')">${g}${th?'<br><small style="color:#16a34a;font-size:10px;">⏰ Hoy</small>':`<br><small style="color:${numClases>0?'#64748b':'#dc2626'};font-size:10px;">${numClases} clases</small>`}</button>`; 
+        if (th && !auto) auto = g;
+        h += `<button class="btn-grupo-card ${th?'is-today-group':''}" id="btn-grp-${g}" onclick="clickSeleccionarGrupo('${g}')">${g}${th?'<br><small style="color:#16a34a;font-size:10px;">⏰ Hoy</small>':`<br><small style="color:${numClases>0?'#64748b':'#dc2626'};font-size:10px;">${numClases} clases</small>`}</button>`;
     });
     c.innerHTML = h || '<span style="font-size:12px;color:#94a3b8;font-style:italic;">Sin grupos.</span>';
     if (auto) clickSeleccionarGrupo(auto); else if (lg.length > 0) clickSeleccionarGrupo(lg[0]);
@@ -1646,18 +1556,18 @@ function clickSeleccionarGrupo(g) {
     document.querySelectorAll('.btn-grupo-card').forEach(b => b.classList.remove('active'));
     let btn = document.getElementById(`btn-grp-${g}`); if (btn) btn.classList.add('active');
     fechaSeleccionadaAsistencia = "";
-    renderizarBotonesFechasParcial(); 
-    actualizarPanelInfoClase(); 
+    renderizarBotonesFechasParcial();
+    actualizarPanelInfoClase();
     actualizarPanelInfoPlan();
     cargarTablaPaseDeLista();
 }
 
-function alCambiarTrimestreParcial() { 
+function alCambiarTrimestreParcial() {
     fechaSeleccionadaAsistencia = "";
-    renderizarBotonesFechasParcial(); 
-    actualizarPanelInfoClase(); 
+    renderizarBotonesFechasParcial();
+    actualizarPanelInfoClase();
     actualizarPanelInfoPlan();
-    cargarTablaPaseDeLista(); 
+    cargarTablaPaseDeLista();
 }
 
 function obtenerFechasFiltradas(g, t, p) {
@@ -1682,7 +1592,7 @@ function obtenerFechasFiltradas(g, t, p) {
 function renderizarBotonesFechasParcial() {
     const c = document.getElementById('asistencia-fechas-botones'); if (!c) return;
     if (!grupoSeleccionadoAsistencia) { c.innerHTML = '<span style="font-size:12px;color:#64748b;font-style:italic;">Selecciona grupo.</span>'; return; }
-    const t = document.getElementById('ast-trimestre-select').value; 
+    const t = document.getElementById('ast-trimestre-select').value;
     const p = document.getElementById('ast-parcial-select').value;
     const tO = configTrimestres[t];
     const pO = tO && tO.parciales ? tO.parciales[p] : null;
@@ -1694,9 +1604,9 @@ function renderizarBotonesFechasParcial() {
         return false;
     });
     const f = obtenerFechasFiltradas(grupoSeleccionadoAsistencia, t, p);
-    if (f.length === 0) { 
+    if (f.length === 0) {
         c.innerHTML = `<div style="padding:12px;background:#fff3cd;border:1px solid #ffc107;border-radius:6px;font-size:11px;color:#856404;width:100%;">⚠️ <strong>Sin clases para "${grupoSeleccionadoAsistencia}" en ${t}/${p}.</strong><br><small>Verifica el Plan Anual. Usa 🔍 Diagnosticar.</small></div>`;
-        return; 
+        return;
     }
     let avisoFallback = "";
     if (fechasEnRango.length === 0 && f.length > 0) {
@@ -1729,12 +1639,12 @@ function renderizarBotonesFechasParcial() {
     c.innerHTML = h;
 }
 
-function seleccionarFechaClaseBoton(f) { 
-    fechaSeleccionadaAsistencia = f; 
-    renderizarBotonesFechasParcial(); 
-    actualizarPanelInfoClase(); 
+function seleccionarFechaClaseBoton(f) {
+    fechaSeleccionadaAsistencia = f;
+    renderizarBotonesFechasParcial();
+    actualizarPanelInfoClase();
     actualizarPanelInfoPlan();
-    cargarTablaPaseDeLista(); 
+    cargarTablaPaseDeLista();
 }
 
 function verificarSiTieneRegistroGuarado(g, f) {
@@ -1743,9 +1653,7 @@ function verificarSiTieneRegistroGuarado(g, f) {
     return !!localStorage.getItem(`asistencia_${g}_${f}`);
 }
 
-/* ============================================================
-   PASE DE LISTA CON FOTO GRANDE Y NOMBRES SEPARADOS
-   ============================================================ */
+// AJUSTE 2/3/4: el motivo solo aparece si es Justificante; se añade "Participó en otra actividad"
 function cargarTablaPaseDeLista() {
     let g = grupoSeleccionadoAsistencia; let f = fechaSeleccionadaAsistencia; let w = document.getElementById("asistencia-tabla-wrapper");
     if (!g || !f) { w.innerHTML = `<p style="font-style:italic;color:#64748b;padding:15px;text-align:center;">Selecciona grupo y fecha.</p>`; return; }
@@ -1753,38 +1661,38 @@ function cargarTablaPaseDeLista() {
     let m = ci ? ci.modulo : "-"; let d = ci ? ci.desc : "-";
     let a = obtenerListaAlumnosProcesada().filter(x => gradosCoinciden((x.GradoGrupo || x.gradogrupo || ""), g));
     if (a.length === 0) { w.innerHTML = `<p style="color:red;padding:15px;text-align:center;">Sin alumnos en grupo ${g}.</p>`; return; }
-    let h = `<div style="margin-bottom:12px;display:flex;gap:10px;align-items:center;background:#e0f2fe;padding:10px 14px;border-radius:8px;flex-wrap:wrap;justify-content:space-between;"><span style="font-size:14px;font-weight:bold;color:#0369a1;">📖 Clase: [${m}] ${d}</span><button class="btn-print" style="font-size:12px;background:#0288d1;" onclick="aplicarValoresPorDefectoTodos()">✨ Auto</button></div><table class="attendance-table"><thead><tr><th style="width:4%;">#</th><th style="width:36%;">Alumno</th><th style="width:26%;">Asistencia</th><th style="width:12%;">Conducta</th><th style="width:10%;">Trabajo</th><th style="width:12%;">Promedio</th></tr></thead><tbody>`;
+    a = ordenarPorApellido([...a]);
+    let h = `<div style="margin-bottom:10px;display:flex;gap:10px;align-items:center;background:#e0f2fe;padding:8px 14px;border-radius:8px;flex-wrap:wrap;justify-content:space-between;"><span style="font-size:13px;font-weight:bold;color:#0369a1;">📖 Clase: [${m}] ${d}</span><button class="btn-print" style="font-size:12px;background:#0288d1;" onclick="aplicarValoresPorDefectoTodos()">✨ Auto</button></div><table class="attendance-table"><colgroup><col style="width:3%"><col style="width:27%"><col style="width:34%"><col style="width:14%"><col style="width:10%"><col style="width:12%"></colgroup><thead><tr><th>#</th><th>Alumno</th><th>Asistencia</th><th>Conducta</th><th>Trabajo</th><th>Promedio</th></tr></thead><tbody>`;
     let gk = g.replace(/[.#$\[\]/]/g, '_'); let fk = f.replace(/[.#$\[\]/]/g, '_');
     let dp = null;
     if (cacheAsistencia && cacheAsistencia[gk] && cacheAsistencia[gk][fk]) { dp = cacheAsistencia[gk][fk]; if (!Array.isArray(dp)) dp = Object.values(dp); }
     else dp = JSON.parse(localStorage.getItem(`asistencia_${g}_${f}`) || "null");
-    
+
     a.forEach((al, i) => {
-        let nc = obtenerNombreUsuario(al); 
-        let p = nc.trim().split(/\s+/); 
-        let nP = p[0] || ""; 
-        let aP = p.slice(1).join(" ") || "";
+        let nc = obtenerNombreUsuario(al);
+        let nP = obtenerNombrePila(al);
+        let aP = obtenerApellidos(al);
         let rp = dp ? dp.find(r => { let nr = (r.alumno || "").toString().trim().toLowerCase(); let nb = nc.trim().toLowerCase(); return nr === nb || nb.includes(nr) || nr.includes(nb); }) : null;
         let av = rp ? (rp.estado || "Presente") : "Presente";
-        let mj = rp ? (rp.motivoJustificado || "Enfermo") : "Enfermo";
+        // AJUSTE 2: motivo solo si es Justificante
+        let mj = rp ? (rp.motivoJustificado || "") : "";
         let cv = rp ? (rp.conducta || "Buena") : "Buena";
         let acv = "10"; if (rp) { let ra = rp.actividad || "10"; acv = String(Math.round(parseFloat(ra) || 10)); }
         let pv = rp ? (rp.promedio || "10.0") : "10.0";
         let pu = obtenerUrlImagenDirecta(al);
-        
-        // FOTO GRANDE + NOMBRE ARRIBA Y APELLIDOS ABAJO
-        h += `<tr id="row_ast_${i}"><td>${i+1}</td><td><div style="display:flex;align-items:center;gap:14px;">
+
+        h += `<tr id="row_ast_${i}"><td>${i+1}</td><td><div class="alumno-celda">
             <div class="foto-pase-lista">${pu?`<img src="${pu}">`:`<span>${nP.charAt(0)}</span>`}</div>
             <div class="alumno-nombre-bloque">
                 <span class="nombre-linea">${nP}</span>
                 <span class="apellidos-linea">${aP}</span>
             </div>
-        </div></td><td><div style="display:flex;flex-direction:column;gap:6px;"><div class="attendance-options" style="font-size:12px;display:flex;gap:8px;flex-wrap:wrap;">
-            <label style="color:#2e7d32;"><input type="radio" name="ast_${i}" value="Presente" ${av==='Presente'?'checked':''} data-alumno="${escapeAttr(nc)}" onchange="toggleMotivoJustificante(${i});recalcularFilaAsistencia(${i})"> P</label>
-            <label style="color:#c62828;"><input type="radio" name="ast_${i}" value="Falta" ${av==='Falta'?'checked':''} data-alumno="${escapeAttr(nc)}" onchange="toggleMotivoJustificante(${i});recalcularFilaAsistencia(${i})"> F</label>
-            <label style="color:#e65100;"><input type="radio" name="ast_${i}" value="Retardo" ${av==='Retardo'?'checked':''} data-alumno="${escapeAttr(nc)}" onchange="toggleMotivoJustificante(${i});recalcularFilaAsistencia(${i})"> R</label>
-            <label style="color:#0288d1;"><input type="radio" name="ast_${i}" value="Justificante" ${av==='Justificante'?'checked':''} data-alumno="${escapeAttr(nc)}" onchange="toggleMotivoJustificante(${i});recalcularFilaAsistencia(${i})"> J</label>
-        </div><div id="box_just_${i}" style="display:${av==='Justificante'?'block':'none'};"><select id="just_motivo_${i}" style="padding:4px;font-size:11px;border-radius:4px;border:1px solid #0288d1;width:100%;background:#e0f2fe;color:#0369a1;font-weight:bold;"><option value="Enfermo" ${mj==='Enfermo'?'selected':''}>🦠 Enfermo</option><option value="Salió" ${mj==='Salió'?'selected':''}>🚪 Salió</option><option value="Se retiró" ${mj==='Se retiró'?'selected':''}>🚶 Se retiró</option></select></div></div></td><td><select id="cond_${i}" onchange="recalcularFilaAsistencia(${i})" style="padding:5px;font-size:12px;border-radius:4px;border:1px solid var(--border-color);width:100%;"><option value="Buena" ${cv==='Buena'?'selected':''}>😊 Buena (10)</option><option value="Regular 1" ${cv==='Regular 1'?'selected':''}>😐 Regular (9)</option><option value="Regular 2" ${cv==='Regular 2'?'selected':''}>😐 Regular (8)</option><option value="Mala" ${cv==='Mala'?'selected':''}>⚠️ Mala (7)</option></select></td><td><select id="act_${i}" onchange="recalcularFilaAsistencia(${i})" style="padding:5px;font-size:12px;border-radius:4px;border:1px solid var(--border-color);width:100%;">${[10,9,8,7,6,5].map(v => `<option value="${v}" ${acv==String(v)?'selected':''}>${v}</option>`).join('')}</select></td><td style="text-align:center;"><span id="prom_${i}" style="font-weight:900;font-size:15px;color:#0c3ba0;background:#e0f7fa;padding:4px 10px;border-radius:6px;display:inline-block;">${pv}</span></td></tr>`;
+        </div></td><td><div style="display:flex;flex-direction:column;gap:4px;"><div class="attendance-options">
+            <label style="color:#2e7d32;" title="Presente"><input type="radio" name="ast_${i}" value="Presente" ${av==='Presente'?'checked':''} data-alumno="${escapeAttr(nc)}" onchange="toggleMotivoJustificante(${i});recalcularFilaAsistencia(${i})"> P <span class="sig">Presente</span></label>
+            <label style="color:#c62828;" title="Falta"><input type="radio" name="ast_${i}" value="Falta" ${av==='Falta'?'checked':''} data-alumno="${escapeAttr(nc)}" onchange="toggleMotivoJustificante(${i});recalcularFilaAsistencia(${i})"> F <span class="sig">Falta</span></label>
+            <label style="color:#e65100;" title="Retardo"><input type="radio" name="ast_${i}" value="Retardo" ${av==='Retardo'?'checked':''} data-alumno="${escapeAttr(nc)}" onchange="toggleMotivoJustificante(${i});recalcularFilaAsistencia(${i})"> R <span class="sig">Retardo</span></label>
+            <label style="color:#0288d1;" title="Justificado"><input type="radio" name="ast_${i}" value="Justificante" ${av==='Justificante'?'checked':''} data-alumno="${escapeAttr(nc)}" onchange="toggleMotivoJustificante(${i});recalcularFilaAsistencia(${i})"> J <span class="sig">Justificado</span></label>
+        </div><div id="box_just_${i}" class="just-box" style="display:${av==='Justificante'?'block':'none'};"><select id="just_motivo_${i}" style="border:1px solid #0288d1;background:#e0f2fe;color:#0369a1;font-weight:bold;"><option value="">— Motivo (solo si es J) —</option><option value="Enfermo" ${mj==='Enfermo'?'selected':''}>🦠 Enfermo</option><option value="Salió" ${mj==='Salió'?'selected':''}>🚪 Salió</option><option value="Se retiró" ${mj==='Se retiró'?'selected':''}>🚶 Se retiró</option><option value="Otra actividad" ${mj==='Otra actividad'?'selected':''}>🎯 Otra actividad</option><option value="Participó en otra actividad" ${mj==='Participó en otra actividad'?'selected':''}>🏅 Participó en otra actividad</option></select></div></div></td><td><select id="cond_${i}" onchange="recalcularFilaAsistencia(${i})"><option value="Buena" ${cv==='Buena'?'selected':''}>😊 Buena (10)</option><option value="Regular 1" ${cv==='Regular 1'?'selected':''}>😐 Regular (9)</option><option value="Regular 2" ${cv==='Regular 2'?'selected':''}>😐 Regular (8)</option><option value="Mala" ${cv==='Mala'?'selected':''}>⚠️ Mala (7)</option></select></td><td><select id="act_${i}" onchange="recalcularFilaAsistencia(${i})">${[10,9,8,7,6,5].map(v => `<option value="${v}" ${acv==String(v)?'selected':''}>${v}</option>`).join('')}</select></td><td style="text-align:center;"><span id="prom_${i}" class="prom-badge">${pv}</span></td></tr>`;
     });
     h += `</tbody></table>`; w.innerHTML = h;
     a.forEach((_, i) => recalcularFilaAsistencia(i));
@@ -1816,29 +1724,24 @@ function aplicarValoresPorDefectoTodos() {
     });
 }
 
-/* ============================================================
-   ACTUALIZAR PANEL INFO PLAN ANUAL EN PASE DE LISTA
-   ============================================================ */
 function actualizarPanelInfoPlan() {
     let panel = document.getElementById('clase-info-plan-panel');
     let titulo = document.getElementById('clase-info-titulo');
     let detalle = document.getElementById('clase-info-detalle');
     if (!panel || !titulo || !detalle) return;
-    
-    if (!grupoSeleccionadoAsistencia || !fechaSeleccionadaAsistencia) {
-        panel.style.display = 'none';
-        return;
-    }
-    
+    if (!grupoSeleccionadoAsistencia || !fechaSeleccionadaAsistencia) { panel.style.display = 'none'; return; }
     let ci = state.syllabus.find(c => gradosCoinciden(c.grado, grupoSeleccionadoAsistencia) && c.fechaClase === fechaSeleccionadaAsistencia);
-    if (!ci) {
-        panel.style.display = 'none';
-        return;
-    }
-    
+    if (!ci) { panel.style.display = 'none'; return; }
     panel.style.display = 'block';
     titulo.innerHTML = `<span class="modulo-badge">📚 ${ci.modulo}</span> ${ci.desc}`;
     detalle.innerHTML = `${ci.detallado1 ? '📝 Detalle: ' + ci.detallado1 : ''}<br>⏰ Hora: ${ci.hora} | 📅 Fecha: ${ci.fechaClase} | 🎓 Grado: ${ci.grado}`;
+}
+
+function editarClaseDesdePanel() {
+    if (!grupoSeleccionadoAsistencia || !fechaSeleccionadaAsistencia) { alert('Selecciona una clase primero.'); return; }
+    let idx = state.syllabus.findIndex(c => gradosCoinciden(c.grado, grupoSeleccionadoAsistencia) && c.fechaClase === fechaSeleccionadaAsistencia);
+    if (idx < 0) { alert('No se encontró la clase en el Plan Anual.'); return; }
+    abrirModalEditarClase(idx);
 }
 
 async function guardarAsistenciaGoogleSheets() {
@@ -1854,7 +1757,8 @@ async function guardarAsistenciaGoogleSheets() {
         let c = document.getElementById(`cond_${i}`)?.value || "Buena";
         let ac = document.getElementById(`act_${i}`)?.value || "10";
         let p = document.getElementById(`prom_${i}`)?.innerText || "10.0";
-        let mj = document.getElementById(`just_motivo_${i}`)?.value || "";
+        // AJUSTE 2: motivo solo si es Justificante
+        let mj = (e === "Justificante") ? (document.getElementById(`just_motivo_${i}`)?.value || "") : "";
         regs.push({ alumno: al, estado: e, conducta: c, actividad: ac, promedio: parseFloat(p) || 10.0, motivoJustificado: mj });
     });
     try {
@@ -1936,10 +1840,11 @@ function generarReporteTrimestralUI() {
     let fs = [...new Set(state.syllabus.filter(c => gradosCoinciden(c.grado, g) && c.fechaClase >= ro.inicio && c.fechaClase <= ro.fin).map(c => c.fechaClase))].sort();
     let a = obtenerListaAlumnosProcesada().filter(x => gradosCoinciden((x.GradoGrupo || x.gradogrupo || ""), g));
     if (a.length === 0) { w.innerHTML = `<p style="color:red;padding:15px;text-align:center;">Sin alumnos.</p>`; return; }
+    a = ordenarPorApellido([...a]);
     let rp = {}; let gk = g.replace(/[.#$\[\]/]/g, '_');
     fs.forEach(f => { let fk = f.replace(/[.#$\[\]/]/g, '_'); let arr = cacheAsistencia[gk]?.[fk] || JSON.parse(localStorage.getItem(`asistencia_${g}_${f}`) || "null"); if (arr) { if (!Array.isArray(arr)) arr = Object.values(arr); if (arr.length > 0) rp[f] = arr; } });
     let fe = Object.keys(rp);
-    let h = `<div style="background:#f8fafc;padding:12px;border-radius:8px;border:1px solid #cbd5e1;margin-bottom:15px;font-size:13px;"><strong>📊 ${tr}</strong> - ${g}<br>📅 ${ro.inicio} al ${ro.fin} | Prog: ${fs.length} | Eval: ${fe.length}</div><table class="data-table"><thead><tr><th>#</th><th>Alumno</th><th>P</th><th>F</th><th>R</th><th>J</th><th>%</th><th>Prom</th></tr></thead><tbody>`;
+    let h = `<div style="background:#f8fafc;padding:12px;border-radius:8px;border:1px solid #cbd5e1;margin-bottom:15px;font-size:13px;"><strong>📊 ${tr}</strong> - ${g}<br>📅 ${ro.inicio} al ${ro.fin} | Prog: ${fs.length} | Eval: ${fe.length}</div><table class="data-table"><thead><tr><th>#</th><th>Alumno (ordenado por apellido)</th><th>P</th><th>F</th><th>R</th><th>J</th><th>%</th><th>Prom</th></tr></thead><tbody>`;
     a.forEach((al, i) => {
         let n = obtenerNombreUsuario(al); let P=0,F=0,R=0,J=0,SP=0,C=0;
         fe.forEach(f => { let r = rp[f].find(x => (x.alumno || "").toString().trim().toLowerCase() === n.trim().toLowerCase()); if (r) { let s = r.estado || "Presente"; if (s==="Presente") P++; else if (s==="Falta") F++; else if (s==="Retardo") R++; else if (s==="Justificante") J++; SP += parseFloat(r.promedio || 0); C++; } });
@@ -1951,28 +1856,21 @@ function generarReporteTrimestralUI() {
     h += `</tbody></table>`; w.innerHTML = h;
 }
 
-/* ============================================================
-   IMPRIMIR CALIFICACIONES GRUPO (PDF CARTA)
-   ============================================================ */
 function imprimirCalificacionesGrupo() {
     let g = document.getElementById("resumen-grupo-select")?.value || "";
     let t = document.getElementById("resumen-trimestre-select")?.value || "T1";
     let p = document.getElementById("resumen-parcial-select")?.value || "TODOS";
     if (!g) { alert("Selecciona un grupo."); return; }
-    
     let ro = configTrimestres[t] || { inicio: "2026-08-01", fin: "2026-12-31" }; let tr = t;
     if (p !== "TODOS" && ro.parciales && ro.parciales[p]) { ro = ro.parciales[p]; tr = `${t} - ${p}`; }
-    
     let fs = [...new Set(state.syllabus.filter(c => gradosCoinciden(c.grado, g) && c.fechaClase >= ro.inicio && c.fechaClase <= ro.fin).map(c => c.fechaClase))].sort();
     let a = obtenerListaAlumnosProcesada().filter(x => gradosCoinciden((x.GradoGrupo || x.gradogrupo || ""), g));
-    
+    a = ordenarPorApellido([...a]);
     let rp = {}; let gk = g.replace(/[.#$\[\]/]/g, '_');
     fs.forEach(f => { let fk = f.replace(/[.#$\[\]/]/g, '_'); let arr = cacheAsistencia[gk]?.[fk] || JSON.parse(localStorage.getItem(`asistencia_${g}_${f}`) || "null"); if (arr) { if (!Array.isArray(arr)) arr = Object.values(arr); if (arr.length > 0) rp[f] = arr; } });
     let fe = Object.keys(rp);
-    
     let html = `<div class="print-header-reporte"><h2>📊 CALIFICACIONES ${tr}</h2><h3>Colegio Latino - Robótica | Grupo: ${g}</h3><h3>Periodo: ${ro.inicio} al ${ro.fin} | Clases evaluadas: ${fe.length}</h3></div>`;
     html += `<table class="print-calif-table"><thead><tr><th>#</th><th style="text-align:left;">Alumno</th><th>P</th><th>F</th><th>R</th><th>J</th><th>% Asist.</th><th>Promedio</th></tr></thead><tbody>`;
-    
     a.forEach((al, i) => {
         let n = obtenerNombreUsuario(al); let P=0,F=0,R=0,J=0,SP=0,C=0;
         fe.forEach(f => { let r = rp[f].find(x => (x.alumno || "").toString().trim().toLowerCase() === n.trim().toLowerCase()); if (r) { let s = r.estado || "Presente"; if (s==="Presente") P++; else if (s==="Falta") F++; else if (s==="Retardo") R++; else if (s==="Justificante") J++; SP += parseFloat(r.promedio || 0); C++; } });
@@ -1983,7 +1881,6 @@ function imprimirCalificacionesGrupo() {
     });
     html += `</tbody></table>`;
     html += `<div style="margin-top:20px; font-size:10px; text-align:center; color:#64748b;">Generado el ${new Date().toLocaleString('es-MX')} | P=Presente, F=Falta, R=Retardo, J=Justificante</div>`;
-    
     let win = window.open('', '_blank');
     win.document.write(`<!DOCTYPE html><html><head><title>Calificaciones ${g} ${tr}</title><style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; padding: 20px; }
@@ -2002,9 +1899,82 @@ function imprimirCalificacionesGrupo() {
     setTimeout(() => win.print(), 500);
 }
 
-/* ============================================================
-   HISTORIAL DE ALUMNO POR TRIMESTRE
-   ============================================================ */
+function construirDetallePorClaseHTML() {
+    let g = document.getElementById("resumen-grupo-select")?.value || "";
+    let t = document.getElementById("resumen-trimestre-select")?.value || "T1";
+    let p = document.getElementById("resumen-parcial-select")?.value || "TODOS";
+    if (!g) return "";
+    let ro = configTrimestres[t] || { inicio: "2026-08-01", fin: "2026-12-31" }; let tr = t;
+    if (p !== "TODOS" && ro.parciales && ro.parciales[p]) { ro = ro.parciales[p]; tr = `${t} - ${p}`; }
+    let fs = [...new Set(state.syllabus.filter(c => gradosCoinciden(c.grado, g) && c.fechaClase >= ro.inicio && c.fechaClase <= ro.fin).map(c => c.fechaClase))].sort();
+    let a = obtenerListaAlumnosProcesada().filter(x => gradosCoinciden((x.GradoGrupo || x.gradogrupo || ""), g));
+    a = ordenarPorApellido([...a]);
+    if (a.length === 0) return `<p style="color:red;">Sin alumnos para ${g}.</p>`;
+    let gk = g.replace(/[.#$\[\]/]/g, '_');
+    let html = `<div class="print-header-reporte"><h2>📋 DETALLE POR CLASE — ${tr}</h2><h3>Colegio Latino - Robótica | Grupo: ${g}</h3><h3>Periodo: ${ro.inicio} al ${ro.fin}</h3></div>`;
+    let clasesConRegistro = 0;
+    fs.forEach(f => {
+        let fk = f.replace(/[.#$\[\]/]/g, '_');
+        let arr = cacheAsistencia[gk]?.[fk] || JSON.parse(localStorage.getItem(`asistencia_${g}_${f}`) || "null");
+        if (!arr) return;
+        if (!Array.isArray(arr)) arr = Object.values(arr);
+        if (arr.length === 0) return;
+        clasesConRegistro++;
+        let ci = state.syllabus.find(c => gradosCoinciden(c.grado, g) && c.fechaClase === f);
+        let titulo = ci ? `📅 ${f} | ⏰ ${ci.hora} | [${ci.modulo}] ${ci.desc}` : `📅 ${f}`;
+        html += `<div class="print-clase-detalle"><div class="clase-titulo">${titulo}</div><table><thead><tr><th>#</th><th style="text-align:left;">Alumno</th><th>Asist.</th><th>Conducta</th><th>Trabajo</th><th>Promedio</th><th>Nota</th></tr></thead><tbody>`;
+        a.forEach((al, i) => {
+            let n = obtenerNombreUsuario(al);
+            let r = arr.find(x => (x.alumno || "").toString().trim().toLowerCase() === n.trim().toLowerCase());
+            let est = r ? (r.estado || "Presente") : "—";
+            let cls = est === "Presente" ? "badge-p" : est === "Falta" ? "badge-f" : est === "Retardo" ? "badge-r" : "badge-j";
+            let cv = r ? (r.conducta || "—") : "—";
+            let ac = r ? (r.actividad || "—") : "—";
+            let pr = r ? (r.promedio || "—") : "—";
+            // AJUSTE 2: solo mostrar nota si es Justificante y tiene motivo
+            let nt = (r && r.estado === "Justificante" && r.motivoJustificado) ? r.motivoJustificado : "";
+            html += `<tr><td>${i+1}</td><td class="nombre">${n}</td><td class="${cls}">${est}</td><td>${cv}</td><td>${ac}</td><td style="font-weight:800;">${pr}</td><td>${nt}</td></tr>`;
+        });
+        html += `</tbody></table></div>`;
+    });
+    if (clasesConRegistro === 0) html += `<p style="text-align:center;color:#64748b;font-style:italic;padding:20px;">No hay clases con asistencia registrada en el periodo seleccionado.</p>`;
+    html += `<div style="margin-top:20px; font-size:10px; text-align:center; color:#64748b;">Generado el ${new Date().toLocaleString('es-MX')}</div>`;
+    return html;
+}
+
+function verDetallePorClaseHTML() {
+    let w = document.getElementById('detalle-por-clase-wrapper');
+    let html = construirDetallePorClaseHTML();
+    if (!html) { alert('Selecciona grupo y periodo.'); return; }
+    w.innerHTML = `<div style="background:#fff;border:1px solid #cbd5e1;border-radius:10px;padding:18px;">${html}</div>`;
+    w.scrollIntoView({ behavior: 'smooth' });
+}
+
+function imprimirDetallePorClase() {
+    let html = construirDetallePorClaseHTML();
+    if (!html) { alert('Selecciona grupo y periodo.'); return; }
+    let win = window.open('', '_blank');
+    win.document.write(`<!DOCTYPE html><html><head><title>Detalle por Clase</title><style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; padding: 20px; }
+        .print-header-reporte { text-align: center; border-bottom: 3px solid #0c3ba0; padding-bottom: 10px; margin-bottom: 16px; }
+        .print-header-reporte h2 { color: #0c3ba0; font-size: 18px; margin: 0; }
+        .print-header-reporte h3 { color: #475569; font-size: 12px; font-weight: normal; margin-top: 4px; }
+        .print-clase-detalle { margin-bottom: 14px; page-break-inside: avoid; }
+        .print-clase-detalle .clase-titulo { background: #0c3ba0; color: white; padding: 5px 10px; font-size: 12px; font-weight: bold; border-radius: 3px; }
+        .print-clase-detalle table { width: 100%; border-collapse: collapse; font-size: 10.5px; margin-top: 4px; }
+        .print-clase-detalle th, .print-clase-detalle td { border: 1px solid #666; padding: 4px 6px; text-align: center; }
+        .print-clase-detalle th { background: #e2e8f0; }
+        .print-clase-detalle td.nombre { text-align: left; font-weight: 700; }
+        .badge-p { color: #15803d; font-weight: 800; }
+        .badge-f { color: #991b1b; font-weight: 800; }
+        .badge-r { color: #c2410c; font-weight: 800; }
+        .badge-j { color: #0369a1; font-weight: 800; }
+        @page { size: letter portrait; margin: 10mm; }
+    </style></head><body>${html}</body></html>`);
+    win.document.close();
+    setTimeout(() => win.print(), 500);
+}
+
 function poblarGruposHistorial() {
     let s = document.getElementById("historial-grupo-filter"); if (!s) return;
     let a = obtenerListaAlumnosProcesada(); let gs = new Set();
@@ -2019,6 +1989,7 @@ function poblarAlumnosHistorial() {
     let a = obtenerListaAlumnosProcesada();
     let gs = document.getElementById("historial-grupo-filter")?.value || "todos";
     if (gs !== "todos") a = a.filter(x => gradosCoinciden((x.GradoGrupo || x.gradogrupo || ""), gs));
+    a = ordenarPorApellido([...a]);
     let h = '<option value="">-- Selecciona alumno --</option>';
     a.forEach((x, i) => h += `<option value="${i}">${obtenerNombreUsuario(x)} (${x.GradoGrupo || x.gradogrupo || "—"})</option>`);
     s.innerHTML = h;
@@ -2028,31 +1999,28 @@ function renderHistorialAlumno() {
     let w = document.getElementById("historial-wrapper"); if (!w) return;
     let idx = document.getElementById("historial-alumno-select")?.value;
     if (idx === "" || idx === undefined) { w.innerHTML = `<p style="text-align:center;padding:30px;color:#64748b;font-style:italic;">Selecciona un alumno para ver su historial.</p>`; return; }
-    
     let gs = document.getElementById("historial-grupo-filter")?.value || "todos";
     let a = obtenerListaAlumnosProcesada();
     if (gs !== "todos") a = a.filter(x => gradosCoinciden((x.GradoGrupo || x.gradogrupo || ""), gs));
+    a = ordenarPorApellido([...a]);
     let al = a[parseInt(idx)];
     if (!al) { w.innerHTML = `<p style="text-align:center;padding:30px;color:#64748b;font-style:italic;">Alumno no encontrado.</p>`; return; }
-    
+
     let nombre = obtenerNombreUsuario(al);
     let grupo = al.GradoGrupo || al.gradogrupo || "—";
-    let pu = obtenerUrlImagenDirecta(al);
-    
+
     let html = `<div class="historial-card"><div class="historial-card-header"><h3>📊 Historial de ${nombre}</h3><span style="font-size:12px;background:#e0f2fe;padding:4px 12px;border-radius:8px;color:#0369a1;font-weight:700;">Grupo: ${grupo}</span></div>`;
-    
-    let totalP=0, totalF=0, totalR=0, totalJ=0, totalProm=0, totalC=0;
-    
+
     for (let tKey in configTrimestres) {
         let T = configTrimestres[tKey];
         let fs = [...new Set(state.syllabus.filter(c => gradosCoinciden(c.grado, grupo) && c.fechaClase >= T.inicio && c.fechaClase <= T.fin).map(c => c.fechaClase))].sort();
-        let rp = {}; let gk = grupo.replace(/[.#$\[\]/]/g, '_');
+        let gk = grupo.replace(/[.#$\[\]/]/g, '_');
+        let rp = {};
         fs.forEach(f => { let fk = f.replace(/[.#$\[\]/]/g, '_'); let arr = cacheAsistencia[gk]?.[fk] || JSON.parse(localStorage.getItem(`asistencia_${grupo}_${f}`) || "null"); if (arr) { if (!Array.isArray(arr)) arr = Object.values(arr); if (arr.length > 0) rp[f] = arr; } });
         let fe = Object.keys(rp);
         let P=0,F=0,R=0,J=0,SP=0,C=0;
         fe.forEach(f => { let r = rp[f].find(x => (x.alumno || "").toString().trim().toLowerCase() === nombre.trim().toLowerCase()); if (r) { let s = r.estado || "Presente"; if (s==="Presente") P++; else if (s==="Falta") F++; else if (s==="Retardo") R++; else if (s==="Justificante") J++; SP += parseFloat(r.promedio || 0); C++; } });
-        totalP+=P; totalF+=F; totalR+=R; totalJ+=J; totalProm+=SP; totalC+=C;
-        
+
         html += `<div style="margin-bottom:18px;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
             <div style="background:${tKey==='T1'?'#e8f5e9':(tKey==='T2'?'#e3f2fd':'#fff3e0')};padding:10px 16px;border-bottom:2px solid ${tKey==='T1'?'#4caf50':(tKey==='T2'?'#2196f3':'#ff9800')};"><strong style="font-size:15px;color:${tKey==='T1'?'#2e7d32':(tKey==='T2'?'#0d47a1':'#e65100')};">📘 ${tKey} (${T.inicio} al ${T.fin})</strong><span style="float:right;font-size:12px;color:#64748b;">${fe.length} clases evaluadas de ${fs.length} programadas</span></div>
             <div class="historial-stats">
@@ -2062,10 +2030,34 @@ function renderHistorialAlumno() {
                 <div class="stat-box justificado"><div class="stat-value">${J}</div><div class="stat-label">Justificado</div></div>
                 <div class="stat-box promedio"><div class="stat-value">${C>0?(SP/C).toFixed(1):'0.0'}</div><div class="stat-label">Promedio</div></div>
             </div>
-            <div style="padding:0 16px 12px;font-size:12px;color:#64748b;">Asistencia: ${fe.length>0 ? Math.round(((P+J+(R*0.8))/fe.length)*100) : 0}%</div>
-        </div>`;
+            <div style="padding:0 16px 12px;font-size:12px;color:#64748b;">Asistencia trimestre: ${fe.length>0 ? Math.round(((P+J+(R*0.8))/fe.length)*100) : 0}%</div>`;
+
+        if (T.parciales) {
+            for (let pKey in T.parciales) {
+                let Pc = T.parciales[pKey];
+                let fsP = fe.filter(f => f >= Pc.inicio && f <= Pc.fin).sort();
+                if (fsP.length === 0) continue;
+                let pP=0,pF=0,pR=0,pJ=0,pSP=0,pC=0;
+                fsP.forEach(f => { let r = rp[f].find(x => (x.alumno || "").toString().trim().toLowerCase() === nombre.trim().toLowerCase()); if (r) { let s = r.estado || "Presente"; if (s==="Presente") pP++; else if (s==="Falta") pF++; else if (s==="Retardo") pR++; else if (s==="Justificante") pJ++; pSP += parseFloat(r.promedio || 0); pC++; } });
+                html += `<div class="parcial-sep">📗 ${pKey.replace('P','Parcial ')} (${Pc.inicio} al ${Pc.fin}) — ${fsP.length} clase(s) evaluada(s) · Asistencia ${pC>0?Math.round(((pP+pJ+(pR*0.8))/pC)*100):0}% · Prom ${pC>0?(pSP/pC).toFixed(1):'0.0'}</div>`;
+                html += `<table class="print-table" style="margin:0 16px 10px; width:calc(100% - 32px); font-size:10.5px;"><thead><tr><th>Fecha</th><th>Módulo</th><th>Asist.</th><th>Conducta</th><th>Trabajo</th><th>Promedio</th><th>Nota</th></tr></thead><tbody>`;
+                fsP.forEach(f => {
+                    let r = rp[f].find(x => (x.alumno || "").toString().trim().toLowerCase() === nombre.trim().toLowerCase());
+                    let ci = state.syllabus.find(c => gradosCoinciden(c.grado, grupo) && c.fechaClase === f);
+                    let mod = ci ? ci.modulo : "—";
+                    let est = r ? (r.estado || "Presente") : "—";
+                    let cls = est === "Presente" ? "badge-p" : est === "Falta" ? "badge-f" : est === "Retardo" ? "badge-r" : "badge-j";
+                    let cv = r ? (r.conducta || "—") : "—";
+                    let ac = r ? (r.actividad || "—") : "—";
+                    let pr = r ? (r.promedio || "—") : "—";
+                    let nt = (r && r.estado === "Justificante" && r.motivoJustificado) ? r.motivoJustificado : "";
+                    html += `<tr><td>${f}</td><td>${mod}</td><td class="${cls}">${est}</td><td>${cv}</td><td>${ac}</td><td style="font-weight:800;">${pr}</td><td>${nt}</td></tr>`;
+                });
+                html += `</tbody></table>`;
+            }
+        }
+        html += `</div>`;
     }
-    
     html += `</div>`;
     w.innerHTML = html;
 }
@@ -2073,28 +2065,38 @@ function renderHistorialAlumno() {
 function imprimirHistorialAlumnoPDF() {
     let idx = document.getElementById("historial-alumno-select")?.value;
     if (idx === "" || idx === undefined) { alert("Selecciona un alumno primero."); return; }
-    
     let gs = document.getElementById("historial-grupo-filter")?.value || "todos";
     let a = obtenerListaAlumnosProcesada();
     if (gs !== "todos") a = a.filter(x => gradosCoinciden((x.GradoGrupo || x.gradogrupo || ""), gs));
+    a = ordenarPorApellido([...a]);
     let al = a[parseInt(idx)];
     if (!al) return;
-    
     let nombre = obtenerNombreUsuario(al);
     let grupo = al.GradoGrupo || al.gradogrupo || "—";
-    
-    let html = `<div class="print-header-reporte"><h2>📊 HISTORIAL DE ASISTENCIA</h2><h3>Colegio Latino - Robótica</h3><h3><strong>${nombre}</strong> | Grupo: ${grupo}</h3></div>`;
-    
+    let pu = obtenerUrlImagenDirecta(al);
+    let inicial = nombre.charAt(0).toUpperCase();
+    let fotoHTML = pu ? `<img src="${pu}" class="print-foto-alumno" onerror="this.outerHTML='<span class=print-foto-alumno-initial>${inicial}</span>'">` : `<span class="print-foto-alumno-initial">${inicial}</span>`;
+
+    let html = `<div class="print-header-reporte" style="display:flex; align-items:center; justify-content:center; gap:20px; text-align:left;">
+        <div>${fotoHTML}</div>
+        <div>
+            <h2 style="margin:0;">📊 HISTORIAL DE ASISTENCIA</h2>
+            <h3 style="margin:4px 0 0;">Colegio Latino - Robótica</h3>
+            <h3 style="margin:2px 0 0;"><strong>${nombre}</strong> | Grupo: ${grupo}</h3>
+        </div>
+    </div>`;
+
     for (let tKey in configTrimestres) {
         let T = configTrimestres[tKey];
         let fs = [...new Set(state.syllabus.filter(c => gradosCoinciden(c.grado, grupo) && c.fechaClase >= T.inicio && c.fechaClase <= T.fin).map(c => c.fechaClase))].sort();
-        let rp = {}; let gk = grupo.replace(/[.#$\[\]/]/g, '_');
+        let gk = grupo.replace(/[.#$\[\]/]/g, '_');
+        let rp = {};
         fs.forEach(f => { let fk = f.replace(/[.#$\[\]/]/g, '_'); let arr = cacheAsistencia[gk]?.[fk] || JSON.parse(localStorage.getItem(`asistencia_${grupo}_${f}`) || "null"); if (arr) { if (!Array.isArray(arr)) arr = Object.values(arr); if (arr.length > 0) rp[f] = arr; } });
         let fe = Object.keys(rp);
         let P=0,F=0,R=0,J=0,SP=0,C=0;
         fe.forEach(f => { let r = rp[f].find(x => (x.alumno || "").toString().trim().toLowerCase() === nombre.trim().toLowerCase()); if (r) { let s = r.estado || "Presente"; if (s==="Presente") P++; else if (s==="Falta") F++; else if (s==="Retardo") R++; else if (s==="Justificante") J++; SP += parseFloat(r.promedio || 0); C++; } });
-        
-        html += `<div class="month-print-block" style="margin-bottom:14px;">
+
+        html += `<div class="month-print-block" style="margin-bottom:16px;">
             <div class="month-print-title">${tKey} — ${T.inicio} al ${T.fin}</div>
             <table class="print-table" style="margin-top:6px;">
                 <thead><tr><th>Presente</th><th>Falta</th><th>Retardo</th><th>Justificado</th><th>Clases Eval.</th><th>Asistencia %</th><th>Promedio</th></tr></thead>
@@ -2107,35 +2109,71 @@ function imprimirHistorialAlumnoPDF() {
                     <td style="text-align:center;font-weight:800;">${fe.length>0 ? Math.round(((P+J+(R*0.8))/fe.length)*100) : 0}%</td>
                     <td style="text-align:center;font-weight:800;">${C>0?(SP/C).toFixed(1):'0.0'}</td>
                 </tr></tbody>
-            </table>
-        </div>`;
+            </table>`;
+
+        if (T.parciales) {
+            for (let pKey in T.parciales) {
+                let Pc = T.parciales[pKey];
+                let fsP = fe.filter(f => f >= Pc.inicio && f <= Pc.fin).sort();
+                if (fsP.length === 0) continue;
+                let pP=0,pF=0,pR=0,pJ=0,pSP=0,pC=0;
+                fsP.forEach(f => { let r = rp[f].find(x => (x.alumno || "").toString().trim().toLowerCase() === nombre.trim().toLowerCase()); if (r) { let s = r.estado || "Presente"; if (s==="Presente") pP++; else if (s==="Falta") pF++; else if (s==="Retardo") pR++; else if (s==="Justificante") pJ++; pSP += parseFloat(r.promedio || 0); pC++; } });
+                html += `<div class="parcial-sep">📗 ${pKey.replace('P','Parcial ')} (${Pc.inicio} al ${Pc.fin}) — Asistencia ${pC>0?Math.round(((pP+pJ+(pR*0.8))/pC)*100):0}% · Prom ${pC>0?(pSP/pC).toFixed(1):'0.0'}</div>`;
+                html += `<table class="print-clase-detalle" style="width:100%; border-collapse:collapse; font-size:10px; margin-top:4px;">
+                    <thead><tr><th>Fecha</th><th>Módulo</th><th>Asist.</th><th>Conducta</th><th>Trabajo</th><th>Promedio</th><th>Nota</th></tr></thead><tbody>`;
+                fsP.forEach(f => {
+                    let r = rp[f].find(x => (x.alumno || "").toString().trim().toLowerCase() === nombre.trim().toLowerCase());
+                    let ci = state.syllabus.find(c => gradosCoinciden(c.grado, grupo) && c.fechaClase === f);
+                    let mod = ci ? ci.modulo : "—";
+                    let est = r ? (r.estado || "Presente") : "—";
+                    let cls = est === "Presente" ? "badge-p" : est === "Falta" ? "badge-f" : est === "Retardo" ? "badge-r" : "badge-j";
+                    let cv = r ? (r.conducta || "—") : "—";
+                    let ac = r ? (r.actividad || "—") : "—";
+                    let pr = r ? (r.promedio || "—") : "—";
+                    let nt = (r && r.estado === "Justificante" && r.motivoJustificado) ? r.motivoJustificado : "";
+                    html += `<tr><td>${f}</td><td>${mod}</td><td class="${cls}">${est}</td><td>${cv}</td><td>${ac}</td><td style="font-weight:800;">${pr}</td><td>${nt}</td></tr>`;
+                });
+                html += `</tbody></table>`;
+            }
+        }
+        html += `</div>`;
     }
-    
     html += `<div style="margin-top:20px; font-size:10px; text-align:center; color:#64748b;">Generado el ${new Date().toLocaleString('es-MX')}</div>`;
-    
+
     let win = window.open('', '_blank');
     win.document.write(`<!DOCTYPE html><html><head><title>Historial ${nombre}</title><style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; padding: 20px; }
-        .print-header-reporte { text-align: center; border-bottom: 3px solid #0c3ba0; padding-bottom: 10px; margin-bottom: 16px; }
-        .print-header-reporte h2 { color: #0c3ba0; font-size: 20px; margin: 0; }
-        .print-header-reporte h3 { color: #475569; font-size: 13px; font-weight: normal; margin-top: 4px; }
+        .print-header-reporte { display: flex; align-items: center; justify-content: center; gap: 20px; border-bottom: 3px solid #0c3ba0; padding-bottom: 10px; margin-bottom: 16px; }
+        .print-header-reporte h2 { color: #0c3ba0; font-size: 18px; margin: 0; }
+        .print-header-reporte h3 { color: #475569; font-size: 12px; font-weight: normal; margin-top: 4px; }
+        .print-foto-alumno { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid #0c3ba0; }
+        .print-foto-alumno-initial { display: inline-flex; width: 90px; height: 90px; border-radius: 50%; background: #e0f7fa; align-items: center; justify-content: center; font-size: 36px; font-weight: 800; color: #0c3ba0; border: 3px solid #0c3ba0; }
         .print-table { width: 100%; border-collapse: collapse; font-size: 11px; }
         .print-table th, .print-table td { border: 1px solid #333; padding: 6px 8px; text-align: left; }
         .print-table th { background: #0c3ba0; color: white; font-weight: 800; text-align: center; }
+        .print-clase-detalle { width: 100%; border-collapse: collapse; font-size: 10px; margin-top: 4px; }
+        .print-clase-detalle th, .print-clase-detalle td { border: 1px solid #666; padding: 3px 5px; text-align: center; }
+        .print-clase-detalle th { background: #e2e8f0; }
+        .badge-p { color: #15803d; font-weight: 800; }
+        .badge-f { color: #991b1b; font-weight: 800; }
+        .badge-r { color: #c2410c; font-weight: 800; }
+        .badge-j { color: #0369a1; font-weight: 800; }
         .month-print-title { background: #0c3ba0; color: white; padding: 6px 10px; font-size: 13px; font-weight: bold; border-radius: 3px; text-transform: uppercase; margin-bottom: 5px; }
         .month-print-block { page-break-inside: avoid; }
-        @page { size: letter portrait; margin: 12mm; }
+        .parcial-sep { background: #e0f2fe; color: #0369a1; font-weight: 800; font-size: 11px; padding: 5px 10px; border-radius: 5px; margin: 10px 0 6px; border-left: 4px solid #0288d1; }
+        @page { size: letter portrait; margin: 10mm; }
     </style></head><body>${html}</body></html>`);
     win.document.close();
     setTimeout(() => win.print(), 500);
 }
 
+// AJUSTE 5: cumpleaños de alumnos CON FOTO
 function generarEImprimirCumpleanosCarta() {
     let a = obtenerListaAlumnosProcesada(); let rd = document.getElementById("alumnos-cumple-carta-reporte"); if (!rd) return;
     const gs = document.getElementById("alumnos-grupo-filter")?.value || "todos";
     if (gs !== "todos") a = a.filter(x => gradosCoinciden((x.GradoGrupo || x.gradogrupo || ""), gs));
     let pr = [];
-    a.forEach(x => { let c = parseDatosDesdeCurp(x.CURP || x.curp || ""); let g = x.GradoGrupo || x.gradogrupo || "General"; if (c) pr.push({ nombre: obtenerNombreUsuario(x), grupo: g, mes: c.mes, dia: c.dia, edad: c.edadActual }); });
+    a.forEach(x => { let c = parseDatosDesdeCurp(x.CURP || x.curp || ""); let g = x.GradoGrupo || x.gradogrupo || "General"; if (c) pr.push({ nombre: obtenerNombreUsuario(x), grupo: g, mes: c.mes, dia: c.dia, edad: c.edadActual, foto: obtenerUrlImagenDirecta(x) }); });
     if (pr.length === 0) { alert("Sin CURP válidas."); return; }
     let mm = Array.from({ length: 12 }, () => []);
     pr.forEach(x => mm[x.mes].push(x));
@@ -2143,14 +2181,18 @@ function generarEImprimirCumpleanosCarta() {
     mm.forEach((am, i) => {
         if (am.length > 0) {
             am.sort((a,b) => a.dia - b.dia);
-            h += `<div class="month-print-block"><div class="month-print-title">🎉 ${monthNames[i].toUpperCase()} (${am.length})</div><table class="print-table"><thead><tr><th style="width:20%;">Día</th><th style="width:50%;">Nombre</th><th style="width:18%;">Grupo</th><th style="width:12%;">Edad</th></tr></thead><tbody>`;
-            am.forEach(x => h += `<tr><td><strong>${x.dia} de ${monthNames[i]}</strong></td><td>${x.nombre}</td><td>${x.grupo}</td><td><strong>${x.edad}</strong></td></tr>`);
+            h += `<div class="month-print-block"><div class="month-print-title">🎉 ${monthNames[i].toUpperCase()} (${am.length})</div><table class="print-table"><thead><tr><th style="width:14%;">Foto</th><th style="width:18%;">Día</th><th style="width:38%;">Nombre</th><th style="width:18%;">Grupo</th><th style="width:12%;">Edad</th></tr></thead><tbody>`;
+            am.forEach(x => {
+                let fotoHTML = x.foto ? `<img src="${x.foto}" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #0c3ba0;">` : `<span style="display:inline-flex;width:40px;height:40px;border-radius:50%;background:#e0f7fa;align-items:center;justify-content:center;font-weight:800;color:#0c3ba0;border:2px solid #0c3ba0;">${x.nombre.charAt(0)}</span>`;
+                h += `<tr><td style="text-align:center;">${fotoHTML}</td><td><strong>${x.dia} de ${monthNames[i]}</strong></td><td>${x.nombre}</td><td>${x.grupo}</td><td><strong>${x.edad}</strong></td></tr>`;
+            });
             h += `</tbody></table></div>`;
         }
     });
     rd.innerHTML = h; window.print();
 }
 
+// AJUSTE 5: cumpleaños de maestros CON FOTO (ya la tenía, se conserva)
 function generarEImprimirCumpleanosMaestrosCarta() {
     let m = obtenerListaMaestrosProcesada(); let rd = document.getElementById("maestros-cumple-carta-reporte"); if (!rd) return;
     let lc = [];
@@ -2187,18 +2229,11 @@ function diagnosticarFechas() {
         let info = porGrado[g];
         let icono = info.fuera > 0 ? "⚠️" : "✅";
         console.log(`  ${icono} ${g}: ${info.total} total | ${info.enRango} en rango | ${info.fuera} fuera de rango`);
-        if (info.fuera > 0) console.log(`     Fechas fuera:`, state.syllabus.filter(c => c.grado === g && c.fechaClase && !obtenerTrimestreParcialPorFecha(c.fechaClase).trimestre).map(c => c.fechaClase).slice(0, 20));
     });
     let gradosPlan = [...new Set(state.syllabus.map(c => c.grado))].sort();
     let gradosAlumnos = [...new Set(state.rawSheets.alumnos.map(a => a.GradoGrupo || a.gradogrupo).filter(g => g))].sort();
     console.log("📋 Grados en Plan Anual:", gradosPlan);
     console.log("👥 Grados en Alumnos:", gradosAlumnos);
-    console.log("🔧 NORMALIZACIÓN (gradosCoinciden):");
-    gradosAlumnos.forEach(ga => {
-        let planMatch = gradosPlan.find(gp => gradosCoinciden(gp, ga));
-        if (planMatch) console.log(`  ✅ "${ga}" ↔ "${planMatch}" → SÍ coinciden`);
-        else console.log(`  ❌ "${ga}" → NO tiene clases en el Plan`);
-    });
     alert("Diagnóstico completo. Abre la consola (F12 → Console) para ver los detalles.");
 }
 
@@ -2213,11 +2248,11 @@ function detectarTrimestreParcialActual() {
 }
 
 function inicializarTrimestreParcialAutomatico() {
-    let t = document.getElementById("ast-trimestre-select"); 
+    let t = document.getElementById("ast-trimestre-select");
     let p = document.getElementById("ast-parcial-select");
     if (!t || !p) return;
-    let a = detectarTrimestreParcialActual(); 
-    t.value = a.trimestre; 
+    let a = detectarTrimestreParcialActual();
+    t.value = a.trimestre;
     p.value = a.parcial;
     fechaSeleccionadaAsistencia = "";
     if (grupoSeleccionadoAsistencia) {
@@ -2352,12 +2387,14 @@ function renderAdminMaestros() {
     if (f === 'activos') lista = lista.filter(m => !esInactivo(m));
     if (f === 'inactivos') lista = lista.filter(m => esInactivo(m));
     if (s) lista = lista.filter(m => (obtenerNombreUsuario(m) + " " + (m.Area||m.area||"") + " " + (m.CURP||m.curp||"")).toLowerCase().includes(s));
+    lista = ordenarPorApellido([...lista]);
     if (lista.length === 0) { c.innerHTML = `<p style="padding:20px;text-align:center;color:#64748b;font-style:italic;">Sin maestros.</p>`; return; }
     let h = `<table><thead><tr><th>Foto</th><th>Nombre</th><th>Área</th><th>CURP</th><th>UNOI</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>`;
     lista.forEach((m, i) => {
         let n = obtenerNombreUsuario(m); let ar = m.Area || m.area || m.Funcion || "—"; let cu = m.CURP || m.curp || "—"; let pu = obtenerUrlImagenDirecta(m); let ina = esInactivo(m);
+        let clave = escapeAttr(claveUnicaUsuario(m));
         let unoi = m.UNOI_Usuario ? `<span class="cred-badge cred-unoi">🔑 ${m.UNOI_Usuario}</span>` : '<span style="color:#94a3b8;font-size:10px;">—</span>';
-        h += `<tr class="${ina?'inactivo':''}"><td>${pu?`<img src="${pu}" style="width:40px;height:40px;border-radius:50%;object-fit:cover;">`:`<span style="display:inline-flex;width:40px;height:40px;border-radius:50%;background:#e0f7fa;align-items:center;justify-content:center;font-weight:bold;color:#0c3ba0;font-size:16px;">${n.charAt(0)}</span>`}</td><td><strong>${n}</strong></td><td>${ar}</td><td><small>${cu}</small></td><td>${unoi}</td><td><span class="admin-badge ${ina?'inactivo':'activo'}">${ina?'Inactivo':'Activo'}</span></td><td><button class="admin-btn-icon admin-btn-edit" onclick="abrirModalEditarUsuario('maestro', ${i})">✏️</button><button class="admin-btn-icon admin-btn-toggle" onclick="toggleEstadoUsuario('maestro', ${i})">${ina?'✅':'🚫'}</button><button class="admin-btn-icon admin-btn-delete" onclick="eliminarUsuarioAdmin('maestro', ${i})">🗑️</button></td></tr>`;
+        h += `<tr class="${ina?'inactivo':''}"><td>${pu?`<img src="${pu}" style="width:40px;height:40px;border-radius:50%;object-fit:cover;">`:`<span style="display:inline-flex;width:40px;height:40px;border-radius:50%;background:#e0f7fa;align-items:center;justify-content:center;font-weight:bold;color:#0c3ba0;font-size:16px;">${n.charAt(0)}</span>`}</td><td><strong>${n}</strong></td><td>${ar}</td><td><small>${cu}</small></td><td>${unoi}</td><td><span class="admin-badge ${ina?'inactivo':'activo'}">${ina?'Inactivo':'Activo'}</span></td><td><button class="admin-btn-icon admin-btn-edit" onclick="abrirModalEditarUsuario('maestro', '${clave}')">✏️</button><button class="admin-btn-icon admin-btn-toggle" onclick="toggleEstadoUsuario('maestro', '${clave}')">${ina?'✅':'🚫'}</button><button class="admin-btn-icon admin-btn-delete" onclick="eliminarUsuarioAdmin('maestro', '${clave}')">🗑️</button></td></tr>`;
     });
     h += `</tbody></table>`; c.innerHTML = h;
 }
@@ -2379,24 +2416,30 @@ function renderAdminAlumnos() {
     if (e === 'activos') lista = lista.filter(x => !esInactivo(x));
     if (e === 'inactivos') lista = lista.filter(x => esInactivo(x));
     if (s) lista = lista.filter(x => (obtenerNombreUsuario(x) + " " + (x.CURP||x.curp||"")).toLowerCase().includes(s));
+    lista = ordenarPorApellido([...lista]);
     if (lista.length === 0) { c.innerHTML = `<p style="padding:20px;text-align:center;color:#64748b;font-style:italic;">Sin alumnos.</p>`; return; }
     let h = `<table><thead><tr><th>Foto</th><th>Nombre</th><th>Grupo</th><th>CURP</th><th>UNOI</th><th>Creativa</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>`;
     lista.forEach((a, i) => {
         let n = obtenerNombreUsuario(a); let gr = a.GradoGrupo || a.gradogrupo || "—"; let cu = a.CURP || a.curp || "—"; let pu = obtenerUrlImagenDirecta(a); let ina = esInactivo(a);
+        let clave = escapeAttr(claveUnicaUsuario(a));
         let unoi = a.UNOI_Usuario ? `<span class="cred-badge cred-unoi">🔑 ${a.UNOI_Usuario}</span>` : '<span style="color:#94a3b8;font-size:10px;">—</span>';
         let cre = a.Creativa_Usuario ? `<span class="cred-badge cred-creativa">🎨 ${a.Creativa_Usuario}</span>` : '<span style="color:#94a3b8;font-size:10px;">—</span>';
-        h += `<tr class="${ina?'inactivo':''}"><td>${pu?`<img src="${pu}" style="width:40px;height:40px;border-radius:50%;object-fit:cover;">`:`<span style="display:inline-flex;width:40px;height:40px;border-radius:50%;background:#e0f7fa;align-items:center;justify-content:center;font-weight:bold;color:#0c3ba0;font-size:16px;">${n.charAt(0)}</span>`}</td><td><strong>${n}</strong></td><td>${gr}</td><td><small>${cu}</small></td><td>${unoi}</td><td>${cre}</td><td><span class="admin-badge ${ina?'inactivo':'activo'}">${ina?'Inactivo':'Activo'}</span></td><td><button class="admin-btn-icon admin-btn-edit" onclick="abrirModalEditarUsuario('alumno', ${i})">✏️</button><button class="admin-btn-icon admin-btn-toggle" onclick="toggleEstadoUsuario('alumno', ${i})">${ina?'✅':'🚫'}</button><button class="admin-btn-icon admin-btn-delete" onclick="eliminarUsuarioAdmin('alumno', ${i})">🗑️</button></td></tr>`;
+        h += `<tr class="${ina?'inactivo':''}"><td>${pu?`<img src="${pu}" style="width:40px;height:40px;border-radius:50%;object-fit:cover;">`:`<span style="display:inline-flex;width:40px;height:40px;border-radius:50%;background:#e0f7fa;align-items:center;justify-content:center;font-weight:bold;color:#0c3ba0;font-size:16px;">${n.charAt(0)}</span>`}</td><td><strong>${n}</strong></td><td>${gr}</td><td><small>${cu}</small></td><td>${unoi}</td><td>${cre}</td><td><span class="admin-badge ${ina?'inactivo':'activo'}">${ina?'Inactivo':'Activo'}</span></td><td><button class="admin-btn-icon admin-btn-edit" onclick="abrirModalEditarUsuario('alumno', '${clave}')">✏️</button><button class="admin-btn-icon admin-btn-toggle" onclick="toggleEstadoUsuario('alumno', '${clave}')">${ina?'✅':'🚫'}</button><button class="admin-btn-icon admin-btn-delete" onclick="eliminarUsuarioAdmin('alumno', '${clave}')">🗑️</button></td></tr>`;
     });
     h += `</tbody></table>`; c.innerHTML = h;
 }
 
-function abrirModalEditarUsuario(tipo, idx) {
-    editingUsuario = { tipo, idx };
+function abrirModalEditarUsuario(tipo, clave) {
+    editingUsuario = { tipo, clave };
     const t = document.getElementById('modal-edit-usuario-title');
     const b = document.getElementById('modal-edit-usuario-body');
     let u = null;
-    if (idx !== null) { let lista = tipo === 'maestro' ? obtenerListaMaestrosProcesada(true) : obtenerListaAlumnosProcesada(true); u = lista[idx]; }
-    t.innerText = idx === null ? `Nuevo ${tipo === 'maestro' ? 'Maestro' : 'Alumno'}` : `Editar: ${obtenerNombreUsuario(u)}`;
+    if (clave !== null && clave !== undefined && clave !== '') {
+        let lista = tipo === 'maestro' ? obtenerListaMaestrosProcesada(true) : obtenerListaAlumnosProcesada(true);
+        u = lista.find(x => claveUnicaUsuario(x) === clave);
+        if (!u) { alert('No se encontró el registro (puede haberse borrado). Recarga.'); return; }
+    }
+    t.innerText = (clave === null || clave === '') ? `Nuevo ${tipo === 'maestro' ? 'Maestro' : 'Alumno'}` : `Editar: ${obtenerNombreUsuario(u)}`;
     let h = '';
     h += `<div class="field-row"><label>Estado:</label><select id="edit-activo" style="padding:6px;border:1px solid #cbd5e1;border-radius:6px;font-size:12px;"><option value="true" ${!esInactivo(u)?'selected':''}>Activo</option><option value="false" ${esInactivo(u)?'selected':''}>Inactivo</option></select></div>`;
     h += `<div class="cred-section" style="background:#f8fafc;border:1px solid #cbd5e1;"><h4 style="color:#0c3ba0;">📋 DATOS PERSONALES</h4>`;
@@ -2422,30 +2465,45 @@ function cerrarModalEditarUsuario() { document.getElementById('modal-edit-usuari
 
 async function guardarUsuarioAdmin() {
     if (!editingUsuario) return;
-    const { tipo, idx } = editingUsuario;
+    const { tipo, clave } = editingUsuario;
     let nodo = tipo === 'maestro' ? 'maestros' : 'alumnos';
     let lista = tipo === 'maestro' ? obtenerListaMaestrosProcesada(true) : obtenerListaAlumnosProcesada(true);
-    let nuevo = idx === null ? {} : { ...lista[idx] };
-    document.querySelectorAll('#modal-edit-usuario-body input[data-key]').forEach(inp => { nuevo[inp.getAttribute('data-key')] = inp.value; });
+    let nuevo = (clave && clave !== '') ? { ...(lista.find(x => claveUnicaUsuario(x) === clave) || {}) } : {};
+    document.querySelectorAll('#modal-edit-usuario-body input[data-key]').forEach(inp => { let k = inp.getAttribute('data-key'); nuevo[k] = inp.value; });
     nuevo.Activo = document.getElementById('edit-activo').value === 'true';
-    if (idx === null) lista.push(nuevo); else lista[idx] = nuevo;
+    let nuevaClave = claveUnicaUsuario(nuevo);
+    let idxExistente = lista.findIndex(x => claveUnicaUsuario(x) === nuevaClave);
+    if (clave && clave !== '') {
+        let idxOriginal = lista.findIndex(x => claveUnicaUsuario(x) === clave);
+        if (idxOriginal < 0) { alert('El registro ya no existe. Recarga.'); return; }
+        if (idxExistente >= 0 && idxExistente !== idxOriginal) {
+            if (!confirm('⚠️ Ya existe otro registro con esa CURP/nombre. ¿Sobrescribirlo?')) return;
+            lista[idxExistente] = nuevo; lista.splice(idxOriginal, 1);
+        } else { lista[idxOriginal] = nuevo; }
+    } else {
+        if (idxExistente >= 0) { if (!confirm('⚠️ Ya existe un registro con esa CURP/nombre. ¿Actualizarlo?')) return; lista[idxExistente] = nuevo; }
+        else { lista.push(nuevo); }
+    }
     try { await db.ref(nodo).set(lista); alert("💾 Guardado en Firebase."); cerrarModalEditarUsuario(); await cargarDatosDesdeSheets(); if (tipo === 'maestro') renderAdminMaestros(); else renderAdminAlumnos(); } catch (e) { alert("Error: " + e.message); }
 }
 
-async function toggleEstadoUsuario(tipo, idx) {
+async function toggleEstadoUsuario(tipo, clave) {
     let nodo = tipo === 'maestro' ? 'maestros' : 'alumnos';
     let lista = tipo === 'maestro' ? obtenerListaMaestrosProcesada(true) : obtenerListaAlumnosProcesada(true);
-    if (idx < 0 || idx >= lista.length) return;
-    let actual = esInactivo(lista[idx]);
-    lista[idx].Activo = actual;
+    let i = lista.findIndex(x => claveUnicaUsuario(x) === clave);
+    if (i < 0) { alert('Registro no encontrado. Recarga.'); return; }
+    let actual = esInactivo(lista[i]);
+    lista[i].Activo = actual;
     try { await db.ref(nodo).set(lista); alert(`Usuario ${actual ? 'activado' : 'desactivado'}.`); await cargarDatosDesdeSheets(); if (tipo === 'maestro') renderAdminMaestros(); else renderAdminAlumnos(); } catch (e) { alert("Error: " + e.message); }
 }
 
-async function eliminarUsuarioAdmin(tipo, idx) {
+async function eliminarUsuarioAdmin(tipo, clave) {
     if (!confirm(`¿Eliminar este ${tipo}?`)) return;
     let nodo = tipo === 'maestro' ? 'maestros' : 'alumnos';
     let lista = tipo === 'maestro' ? obtenerListaMaestrosProcesada(true) : obtenerListaAlumnosProcesada(true);
-    lista.splice(idx, 1);
+    let i = lista.findIndex(x => claveUnicaUsuario(x) === clave);
+    if (i < 0) { alert('Registro no encontrado. Recarga.'); return; }
+    lista.splice(i, 1);
     try { await db.ref(nodo).set(lista); alert("✅ Eliminado."); await cargarDatosDesdeSheets(); if (tipo === 'maestro') renderAdminMaestros(); else renderAdminAlumnos(); } catch (e) { alert("Error: " + e.message); }
 }
 
@@ -2554,6 +2612,7 @@ function renderCredenciales() {
         alumnos = alumnos.filter(a => (obtenerNombreUsuario(a) + " " + (a.CURP||a.curp||"") + " " + (a.UNOI_Usuario||"") + " " + (a.Creativa_Usuario||"")).toLowerCase().includes(busq));
         maestros = maestros.filter(m => (obtenerNombreUsuario(m) + " " + (m.CURP||m.curp||"") + " " + (m.UNOI_Usuario||"")).toLowerCase().includes(busq));
     }
+    alumnos = ordenarPorApellido([...alumnos]); maestros = ordenarPorApellido([...maestros]);
     if (alumnos.length === 0 && maestros.length === 0) { cont.innerHTML = `<p style="padding:20px;text-align:center;color:#64748b;font-style:italic;">Sin resultados.</p>`; return; }
     let h = "";
     if (alumnos.length > 0) {
@@ -2564,11 +2623,12 @@ function renderCredenciales() {
             let unoiUsr = a.UNOI_Usuario || '—'; let unoiPw = a.UNOI_Contrasena || ''; let unoiLink = a.UNOI_Link || '';
             let creUsr = a.Creativa_Usuario || '—'; let crePw = a.Creativa_Contrasena || ''; let creLink = a.Creativa_Link || '';
             let pwU = `pw-u-${i}`, pwC = `pw-c-${i}`;
+            let clave = escapeAttr(claveUnicaUsuario(a));
             let unoiLinkHTML = unoiLink ? `<a href="${escapeAttr(unoiLink)}" target="_blank" style="color:#0288d1;font-weight:bold;font-size:11px;">🔗</a>` : '—';
             let creLinkHTML = creLink ? `<a href="${escapeAttr(creLink)}" target="_blank" style="color:#d97706;font-weight:bold;font-size:11px;">🔗</a>` : '—';
             let unoiPwHTML = unoiPw ? `<div style="display:flex;gap:4px;"><input type="${mostrarPw?'text':'password'}" id="${pwU}" value="${escapeAttr(unoiPw)}" readonly style="padding:2px 6px;border:1px solid #cbd5e1;border-radius:4px;font-size:11px;font-family:monospace;width:80px;"><button onclick="togglePasswordVisibility('${pwU}')" style="background:#64748b;color:white;border:none;border-radius:4px;padding:2px 6px;cursor:pointer;font-size:10px;">👁️</button></div>` : '—';
             let crePwHTML = crePw ? `<div style="display:flex;gap:4px;"><input type="${mostrarPw?'text':'password'}" id="${pwC}" value="${escapeAttr(crePw)}" readonly style="padding:2px 6px;border:1px solid #cbd5e1;border-radius:4px;font-size:11px;font-family:monospace;width:80px;"><button onclick="togglePasswordVisibility('${pwC}')" style="background:#64748b;color:white;border:none;border-radius:4px;padding:2px 6px;cursor:pointer;font-size:10px;">👁️</button></div>` : '—';
-            h += `<tr><td>${i+1}</td><td><div style="display:flex;align-items:center;gap:8px;">${pu?`<img src="${pu}" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">`:`<span style="display:inline-flex;width:36px;height:36px;border-radius:50%;background:#e0f7fa;align-items:center;justify-content:center;font-weight:bold;color:#0c3ba0;font-size:13px;">${n.charAt(0)}</span>`}<strong>${n}</strong></div></td><td><span class="badge-soft" style="background:#e0f2fe;color:#0369a1;">${a.GradoGrupo || a.gradogrupo || '—'}</span></td><td style="background:#faf5ff;">${unoiUsr}</td><td style="background:#faf5ff;">${unoiPwHTML}</td><td style="background:#faf5ff;">${unoiLinkHTML}</td><td style="background:#fffbeb;">${creUsr}</td><td style="background:#fffbeb;">${crePwHTML}</td><td style="background:#fffbeb;">${creLinkHTML}</td><td><button class="admin-btn-icon admin-btn-copy" onclick="copiarCredencialesDe('alumno', ${i})">🔑</button><button class="admin-btn-icon admin-btn-edit" onclick="abrirModalEditarUsuario('alumno', ${i})">✏️</button></td></tr>`;
+            h += `<tr><td>${i+1}</td><td><div style="display:flex;align-items:center;gap:8px;">${pu?`<img src="${pu}" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">`:`<span style="display:inline-flex;width:36px;height:36px;border-radius:50%;background:#e0f7fa;align-items:center;justify-content:center;font-weight:bold;color:#0c3ba0;font-size:13px;">${n.charAt(0)}</span>`}<strong>${n}</strong></div></td><td><span class="badge-soft" style="background:#e0f2fe;color:#0369a1;">${a.GradoGrupo || a.gradogrupo || '—'}</span></td><td style="background:#faf5ff;">${unoiUsr}</td><td style="background:#faf5ff;">${unoiPwHTML}</td><td style="background:#faf5ff;">${unoiLinkHTML}</td><td style="background:#fffbeb;">${creUsr}</td><td style="background:#fffbeb;">${crePwHTML}</td><td style="background:#fffbeb;">${creLinkHTML}</td><td><button class="admin-btn-icon admin-btn-copy" onclick="copiarCredencialesDe('alumno', '${clave}')">🔑</button><button class="admin-btn-icon admin-btn-edit" onclick="abrirModalEditarUsuario('alumno', '${clave}')">✏️</button></td></tr>`;
         });
         h += `</tbody></table></div>`;
     }
@@ -2579,18 +2639,19 @@ function renderCredenciales() {
             let n = obtenerNombreUsuario(m); let pu = obtenerUrlImagenDirecta(m);
             let unoiUsr = m.UNOI_Usuario || '—'; let unoiPw = m.UNOI_Contrasena || ''; let unoiLink = m.UNOI_Link || '';
             let pwM = `pw-m-${i}`;
+            let clave = escapeAttr(claveUnicaUsuario(m));
             let unoiLinkHTML = unoiLink ? `<a href="${escapeAttr(unoiLink)}" target="_blank" style="color:#0288d1;font-weight:bold;font-size:11px;">🔗</a>` : '—';
             let unoiPwHTML = unoiPw ? `<div style="display:flex;gap:4px;"><input type="${mostrarPw?'text':'password'}" id="${pwM}" value="${escapeAttr(unoiPw)}" readonly style="padding:2px 6px;border:1px solid #cbd5e1;border-radius:4px;font-size:11px;font-family:monospace;width:80px;"><button onclick="togglePasswordVisibility('${pwM}')" style="background:#64748b;color:white;border:none;border-radius:4px;padding:2px 6px;cursor:pointer;font-size:10px;">👁️</button></div>` : '—';
-            h += `<tr><td>${i+1}</td><td><div style="display:flex;align-items:center;gap:8px;">${pu?`<img src="${pu}" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">`:`<span style="display:inline-flex;width:36px;height:36px;border-radius:50%;background:#e0f7fa;align-items:center;justify-content:center;font-weight:bold;color:#0c3ba0;font-size:13px;">${n.charAt(0)}</span>`}<strong>${n}</strong></div></td><td>${m.Area || m.area || '—'}</td><td style="background:#faf5ff;">${unoiUsr}</td><td style="background:#faf5ff;">${unoiPwHTML}</td><td style="background:#faf5ff;">${unoiLinkHTML}</td><td><button class="admin-btn-icon admin-btn-copy" onclick="copiarCredencialesDe('maestro', ${i})">🔑</button><button class="admin-btn-icon admin-btn-edit" onclick="abrirModalEditarUsuario('maestro', ${i})">✏️</button></td></tr>`;
+            h += `<tr><td>${i+1}</td><td><div style="display:flex;align-items:center;gap:8px;">${pu?`<img src="${pu}" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">`:`<span style="display:inline-flex;width:36px;height:36px;border-radius:50%;background:#e0f7fa;align-items:center;justify-content:center;font-weight:bold;color:#0c3ba0;font-size:13px;">${n.charAt(0)}</span>`}<strong>${n}</strong></div></td><td>${m.Area || m.area || '—'}</td><td style="background:#faf5ff;">${unoiUsr}</td><td style="background:#faf5ff;">${unoiPwHTML}</td><td style="background:#faf5ff;">${unoiLinkHTML}</td><td><button class="admin-btn-icon admin-btn-copy" onclick="copiarCredencialesDe('maestro', '${clave}')">🔑</button><button class="admin-btn-icon admin-btn-edit" onclick="abrirModalEditarUsuario('maestro', '${clave}')">✏️</button></td></tr>`;
         });
         h += `</tbody></table></div>`;
     }
     cont.innerHTML = h;
 }
 
-function copiarCredencialesDe(tipo, idx) {
+function copiarCredencialesDe(tipo, clave) {
     let lista = tipo === 'maestro' ? obtenerListaMaestrosProcesada(true) : obtenerListaAlumnosProcesada(true);
-    let u = lista[idx]; if (!u) return;
+    let u = lista.find(x => claveUnicaUsuario(x) === clave); if (!u) return;
     let n = obtenerNombreUsuario(u);
     let t = `🔑 CREDENCIALES - ${n}\n\n`;
     if (u.UNOI_Usuario || u.UNOI_Contrasena || u.UNOI_Link) t += `🔹 UNOI\n   Usuario: ${u.UNOI_Usuario || '—'}\n   Contraseña: ${u.UNOI_Contrasena || '—'}\n   Link: ${u.UNOI_Link || '—'}\n\n`;
@@ -2675,7 +2736,7 @@ function previsualizarImport(tipo, event) {
                 let c = {};
                 for (let k in r) {
                     let key = normalizeKey(k); let val = r[k];
-                    if (key === "fechaclase" || key === "fecha" || key === "inicio" || key === "fechadeclase") { let original = val; val = normalizarFecha(val); if (!val && original) console.warn(`⚠️ Fila ${idx+1}: No se pudo normalizar fecha "${original}"`); c["_fechaOriginal"] = original; }
+                    if (key === "fechaclase" || key === "fecha" || key === "inicio" || key === "fechadeclase") { val = normalizarFecha(val); c["_fechaOriginal"] = r[k]; }
                     if (key === "hora") val = normalizarHora(val);
                     c[key] = val;
                 }
@@ -2768,7 +2829,7 @@ async function confirmarImportMaestros() {
         await db.ref('maestros').set(lista);
         s.innerHTML = `<span style="color:#15803d;">✅ ${nuevos} nuevos, ${act} actualizados | 🔑 ${credsLeidas} del Excel | 🔒 ${credsPreservadas} conservadas. Total: ${lista.length}</span>`;
         setTimeout(() => cargarDatosDesdeSheets(), 800);
-    } catch (e) { s.innerHTML = `<span style="color:#dc2626;">❌ ${e.message}</span>`; console.error(e); }
+    } catch (e) { s.innerHTML = `<span style="color:#dc2626;">❌ ${e.message}</span>`; }
 }
 
 async function confirmarImportAlumnos() {
@@ -2801,7 +2862,7 @@ async function confirmarImportAlumnos() {
         await db.ref('alumnos').set(lista);
         s.innerHTML = `<span style="color:#15803d;">✅ ${nuevos} nuevos, ${act} actualizados | 🔑 ${credsLeidas} del Excel | 🔒 ${credsPreservadas} conservadas. Total: ${lista.length}</span>`;
         setTimeout(() => cargarDatosDesdeSheets(), 800);
-    } catch (e) { s.innerHTML = `<span style="color:#dc2626;">❌ ${e.message}</span>`; console.error(e); }
+    } catch (e) { s.innerHTML = `<span style="color:#dc2626;">❌ ${e.message}</span>`; }
 }
 
 function exportarAlumnosExcel() {
@@ -2875,6 +2936,64 @@ async function borrarNodoFirebase(nodo, desc) {
 }
 
 async function recargarTodoDesdeFirebase() { await cargarDatosDesdeSheets(); alert("🔄 Recargado."); }
+
+// AJUSTE 6: CREDENCIAL VIRTUAL
+function abrirCredencialVirtualModal() {
+    if (!currentUserModal) return;
+    let u = currentUserModal;
+    let n = obtenerNombreUsuario(u);
+    let grupo = u.GradoGrupo || u.gradogrupo || u.Area || u.area || "—";
+    let curp = u.CURP || u.curp || "—";
+    let pu = obtenerUrlImagenDirecta(u);
+    let fotoHTML = pu
+        ? `<img src="${pu}" onerror="this.outerHTML='<span>${n.charAt(0)}</span>'">`
+        : `<span>${n.charAt(0)}</span>`;
+    // Credenciales visibles
+    let creds = [];
+    if (u.UNOI_Usuario) creds.push({ l: "UNOI Usuario", v: u.UNOI_Usuario });
+    if (u.UNOI_Contrasena) creds.push({ l: "UNOI Contraseña", v: u.UNOI_Contrasena });
+    if (u.Creativa_Usuario) creds.push({ l: "Creativa Usuario", v: u.Creativa_Usuario });
+    if (u.Creativa_Contrasena) creds.push({ l: "Creativa Contraseña", v: u.Creativa_Contrasena });
+    let credHTML = creds.length > 0 ? creds.map(c => `<div class="cv-cred-row"><span class="cv-cred-lbl">${c.l}:</span><span class="cv-cred-val">${c.v}</span></div>`).join('') : `<div class="cv-cred-row"><span class="cv-cred-lbl">Sin credenciales registradas</span></div>`;
+    let html = `<div class="credencial-virtual" id="credencial-virtual-card">
+        <div class="cv-header">
+            <div style="width:40px;height:40px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font-size:22px;">🤖</div>
+            <div>
+                <div class="cv-title">Colegio Latino</div>
+                <div class="cv-sub">Robótica · Credencial Virtual</div>
+            </div>
+        </div>
+        <div class="cv-body">
+            <div class="cv-foto">${fotoHTML}</div>
+            <div class="cv-info">
+                <div class="cv-nombre">${n}</div>
+                <div class="cv-grupo">🏫 ${grupo}</div>
+                <div class="cv-curp">CURP: ${curp}</div>
+            </div>
+        </div>
+        <div class="cv-cred">${credHTML}</div>
+        <div class="cv-foot">Ciclo Escolar 2026-2027 · ${new Date().toLocaleDateString('es-MX')}</div>
+    </div>`;
+    document.getElementById('credencial-virtual-render').innerHTML = html;
+    document.getElementById('modal-credencial-virtual').style.display = 'flex';
+}
+
+function cerrarCredencialVirtual() { document.getElementById('modal-credencial-virtual').style.display = 'none'; }
+
+async function descargarCredencialPNG() {
+    let card = document.getElementById('credencial-virtual-card');
+    if (!card) { alert('No hay credencial para guardar.'); return; }
+    if (typeof html2canvas === 'undefined') { alert('⚠️ No se pudo cargar la librería de captura. Verifica tu conexión a internet.'); return; }
+    try {
+        let canvas = await html2canvas(card, { scale: 2, backgroundColor: null, useCORS: true });
+        let link = document.createElement('a');
+        let nombre = currentUserModal ? obtenerNombreUsuario(currentUserModal).replace(/\s+/g, '_') : 'credencial';
+        link.download = `Credencial_${nombre}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        alert('📷 Captura descargada. Ya puedes enviarla o compartirla.');
+    } catch (e) { console.error(e); alert('Error al generar la captura: ' + e.message); }
+}
 
 window.onload = function() {
     try { db.ref('.info/connected').on('value', snap => { setFirebaseIndicator(snap.val() === true ? 'connected' : 'error'); }); } catch (e) {}
